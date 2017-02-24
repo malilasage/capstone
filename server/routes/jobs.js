@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
   })
 });
 
-//get a specific job
+//get all data for a specific job
 router.get('/:userid/:id', (req, res) => {
   var jobId = req.params.id;
   User.findById(req.params.userid, (err, data) => {
@@ -58,6 +58,13 @@ router.post('/:userid', (req, res) => {
   })
 });
 
+//update tasks for a specific job
+router.patch('/:userid/:id', (req, res) => {
+  var jobId = req.params.id;
+  
+})
+
+//delete a job
 router.delete('/:userid/:id', (req, res) => {
   var jobId = req.params.id;
   User.findById(req.params.userid, (err, data) => {
