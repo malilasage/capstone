@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = require('bluebird');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:5005');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone');
 
 mongoose.connection.on('error', () => {
   console.log('mongo connection failed')})
