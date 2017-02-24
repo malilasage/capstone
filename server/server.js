@@ -1,3 +1,15 @@
+//database
+const mongoose = require('mongoose');
+
+mongoose.Promise = require('bluebird');
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:5005');
+
+mongoose.connection.on('error', () => {
+  console.log('mongo connection failed')})
+  .once('open', () => {console.log('mongo is lit')});
+
+//server
 const port = process.env.PORT || 5000;
 const express = require('express')
 const path = require('path')
@@ -16,14 +28,6 @@ server.use(function(req, res, next) {
   var err = new Error('Not Found')
   err.status = 404
   next(err)
-})
-
-server.use(function(err, req, res, next) {
-  res.locals.message = err.message
-  res.locals.error = req.server.get('env') === 'development' ? err : {}
-  console.log(err)
-  res.status(err.status || 500)
-  res.json(err)
 })
 
 server.listen(port, () => {
