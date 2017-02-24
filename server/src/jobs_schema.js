@@ -12,9 +12,9 @@ const JobsSchema = new Schema({
     interview: {
       status: String,
       date: String
-    }
+    },
     deadline: String
-  }
+  },
   createdAt: { type: Date, default: Date.now}
 });
 

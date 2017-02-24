@@ -6,7 +6,7 @@ const UserSchema = new Schema({
   firstName: String,
   lastName: String,
   hashedPassword: {
-    type: String
+    type: String,
     validate: {
       validator: (hashedPassword) => hashedPassword.length === 16,
       message: 'if ur password isnt 16 characters, its probably not hashed'
