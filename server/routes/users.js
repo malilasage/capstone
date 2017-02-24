@@ -18,6 +18,7 @@ router.get('/:id', (req, res) => {
   })
 });
 
+//create new user
 router.post('/', (req, res) => {
   User.create({
     firstName: req.body.firstName,
@@ -29,6 +30,7 @@ router.post('/', (req, res) => {
   })
 });
 
+//update user info
 router.patch('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id,
     { $set: req.body }, { new: true },
@@ -38,6 +40,7 @@ router.patch('/:id', (req, res) => {
     });
 });
 
+//delete user
 router.delete('/:id', (req, res) => {
   User.findById(req.params.id, (err, data) => {
     if(err) throw err;

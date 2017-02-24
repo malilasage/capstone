@@ -3,8 +3,18 @@ const Schema = mongoose.Schema;
 const JobsSchema = require('./jobs_schema');
 
 const UserSchema = new Schema({
-  firstName: String,
-  lastName: String,
+  firstName: {
+    type: String,
+    validate: {
+      validator: (firstName) => firstName.length > 0,
+      message: 'user must have a first name'
+    }
+  },
+  lastName: {
+    type: String,
+    validator: (lastName) => lastName.length > 0,
+    message: 'user must have a last name'
+  },
   hashedPassword: {
     type: String,
     validate: {

@@ -21,6 +21,7 @@ server.use(express.static(path.join(__dirname, './client')))
 server.use(express.static(path.join(__dirname, '/../', 'node_modules')))
 
 server.use('/user', require('./routes/users'))
+server.use('/jobs', require('./routes/jobs'))
 
 server.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: './client'})
