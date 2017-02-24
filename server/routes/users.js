@@ -11,6 +11,7 @@ router.get('/:id', (req, res) => {
   User.findById(req.params.id, (err, data) => {
     console.log(req.params.id);
     if(err) { res.send(404) }
+    if(data === null) { res.send(404) }
     else {
       res.send(data);
     }
