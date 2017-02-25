@@ -20,21 +20,11 @@ router.get('/:id', (req, res) => {
 
 //get all data for a specific job
 router.get('/:userid/:id', (req, res) => {
-  var jobId = req.params.id;
-  User.findById(req.params.userid, (err, data) => {
-    if(err) throw err;
-    else {
-      for (var i = 0; i < data.jobs.length; i++) {
-        var job = data.jobs[i];
-        if(jobs._id == jobsId) {
-          res.send(job);
-        }
-        else {
-          console.log('job not found');
-        }
-      }
-    }
-  })
+  User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
+    function(err, data){
+      if(err) { throw err; }
+      res.send(data.jobs[0]);
+    })
 });
 
 //create new job
