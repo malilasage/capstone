@@ -60,8 +60,30 @@ router.post('/:userid', (req, res) => {
 
 //update tasks for a specific job
 router.patch('/:userid/:id', (req, res) => {
-  var jobId = req.params.id;
-  
+  // var jobId = req.params.id;
+  // User.findOneAndUpdate(
+  //   { "_id": req.params.userid, "jobs._id": jobId },
+  //   {
+  //     "$set": {
+  //       "jobs.$": req.body
+  //     }
+  //   },
+  //   function(err, doc) {
+  //     if(err) { throw err; }
+  //     res.send(doc)
+  //   }
+  // )
+  // User.findOne({"jobs._id": req.params.id},
+  // (err, data) => {
+  //   if(err) { throw err; }
+  //   res.send(data);
+  // })
+  // var data = User.jobs.id({"_id": req.params.id});
+  // res.send(data);
+  User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
+  function(err, data){
+  res.send(data)
+})
 })
 
 //delete a job
