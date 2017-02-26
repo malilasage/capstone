@@ -51,56 +51,56 @@ router.post('/:userid', (req, res) => {
 
 //update tasks for a specific job
 router.patch('/:userid/:id', (req, res) => {
-  //test
-  User.findByIdAndUpdate(req.params.id, req.body, (err, data) => {
-    if(err) { throw err }
-    res.send(data);
-  })
-  // var jobId = req.params.id;
-  // User.findOneAndUpdate(
-  //   { "_id": req.params.userid, "jobs._id": jobId },
-  //   {
-  //     "$set": {
-  //       "jobs.$": req.body
-  //     }
-  //   },
-  //   function(err, doc) {
-  //     if(err) { throw err; }
-  //     res.send(doc)
-  //   }
-  // )
-  // User.findOne({"jobs._id": req.params.id},
-  // (err, data) => {
-  //   if(err) { throw err; }
-  //   res.send(data);
-  // })
-  // var data = User.jobs.id({"_id": req.params.id});
-  // res.send(data);
-//   User.findOneAndUpdate({'jobs._id': req.params.id},
-//     {
-//       "$set": {
-//         "jobs.$": req.body
-//       }
-//     },
-//     {
-//       new: true
-//     },
-//   function(err, data){
-//     if(err) { throw err; }
-//   res.send(data)
-// })
-  // User.findOneAndUpdate({_id: req.params.userid, 'jobs._id': req.params.id}, {'jobs.$': req.body},
-  //   (err, data) => {
-  //     res.send(data);
-  //   }
-  // )
-  // User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
-  //   function(err, data){
-  //     if(err) { throw err; }
-  //     if(data === null) { res.send(404) }
-  //     data.
-  //     // res.send(data.jobs[0]);
-  //   })
+  User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
+    function(err, data){
+      if(err) { throw err; }
+      if(data === null) { res.send(404) }
+      updateData(data.jobs[0], req.body, (args) => {
+        res.send(args);
+            // data.save((err, data) => {
+            //   if(err) { throw err; }
+            //   res.send(data);
+            // })
+      });
+    });
+
+
+  function updateData(data, body, callback) {
+    if(req.body.title !== undefined) {
+      data.title = req.body.title;
+    }
+    if(body.company !== undefined) {
+      console.log('in here!');
+      data.company = body.company;
+    }
+    if(body.description !== undefined) {
+      data.description = body.description;
+    }
+    if(body.notes !== undefined) {
+      data.notes = body.notes;
+    }
+    if(body.tasks !== undefined) {
+      if(body.tasks.coverLetterStatus !== undefined) {
+        data.tasks.coverLetterStatus = body.tasks.coverLetterStatus;
+      }
+      if(body.tasks.resumeStatus !== undefined) {
+        data.tasks.resumeStatus = body.tasks.resumeStatus;
+      }
+      if(body.tasks.deadline !== undefined) {
+        data.tasks.deadline = body.tasks.deadline;
+      }
+      if(body.tasks.interview !== undefined) {
+        if(body.tasks.interview.date !== undefined) {
+          data.tasks.interview.date = body.tasks.interview.date;
+        }
+        if(body.tasks.interview.status !== undefined) {
+          data.tasks.interview.status = body.tasks.interview.status;
+        }
+      }
+    }
+    // console.log(data);
+    return callback(data);
+  }
 })
 
 //delete a job
