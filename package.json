@@ -19,6 +19,7 @@
   "homepage": "https://github.com/malilasage/capstone#readme",
   "dependencies": {
     "angular": "^1.6.0",
+    "angular-ui-router": "^0.4.2",
     "bluebird": "^3.4.7",
     "body-parser": "^1.16.1",
     "dotenv": "^4.0.0",

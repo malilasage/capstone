@@ -51,6 +51,11 @@ router.post('/:userid', (req, res) => {
 
 //update tasks for a specific job
 router.patch('/:userid/:id', (req, res) => {
+  //test
+  User.findByIdAndUpdate(req.params.id, req.body, (err, data) => {
+    if(err) { throw err }
+    res.send(data);
+  })
   // var jobId = req.params.id;
   // User.findOneAndUpdate(
   //   { "_id": req.params.userid, "jobs._id": jobId },
