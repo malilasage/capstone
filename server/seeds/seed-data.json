@@ -1,0 +1,234 @@
+{
+  "__v": 20,
+  "_id": ObjectId("58b0ab4eff75c44a8ca38"),
+  "createdAt": "2017-02-24T21:53:18.697Z",
+  "firstName": "Harry",
+  "lastName": "Potter",
+  "hashedPassword": "1234567890123456",
+  "jobs": [
+    {
+        "_id": "58b0ae177ec7934b8b98a",
+        "company": "Ministry of Magic",
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": "cool badass shit",
+        "notes": "love it",
+        "tasks": {
+            "coverLetterStatus": "written",
+            "deadline": "2017-03-05T22:05:11.643Z",
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": "written"
+        },
+        "title": "Auror"
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98b",
+        "company": "Hogwarts",
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    }
+  ]
+},
+{
+  "__v": 20,
+  "_id": "58b0ab4eff75c44a8ca38",
+  "createdAt": "2017-02-24T21:53:18.697Z",
+  "firstName": "Harry",
+  "lastName": "Potter",
+  "hashedPassword": "1234567890123456",
+  "jobs": [
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    }
+  ]
+},
+{
+  "__v": 20,
+  "_id": "58b0ab4eff75c44a8ca38",
+  "createdAt": "2017-02-24T21:53:18.697Z",
+  "firstName": "Harry",
+  "lastName": "Potter",
+  "hashedPassword": "1234567890123456",
+  "jobs": [
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    },
+    {
+        "_id": "58b0ae177ec7934b8b98c832",
+        "company": null,
+        "createdAt": "2017-02-24T22:05:11.643Z",
+        "description": null,
+        "notes": null,
+        "tasks": {
+            "coverLetterStatus": null,
+            "deadline": null,
+            "interview": {
+                "date": null,
+                "status": null
+            },
+            "resumeStatus": null
+        },
+        "title": null
+    }
+  ]
+}

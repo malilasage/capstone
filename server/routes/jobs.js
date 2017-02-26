@@ -23,6 +23,7 @@ router.get('/:userid/:id', (req, res) => {
   User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
     function(err, data){
       if(err) { throw err; }
+      if(data === null) { res.send(404) }
       res.send(data.jobs[0]);
     })
 });
@@ -70,10 +71,31 @@ router.patch('/:userid/:id', (req, res) => {
   // })
   // var data = User.jobs.id({"_id": req.params.id});
   // res.send(data);
-  User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
-  function(err, data){
-  res.send(data)
-})
+//   User.findOneAndUpdate({'jobs._id': req.params.id},
+//     {
+//       "$set": {
+//         "jobs.$": req.body
+//       }
+//     },
+//     {
+//       new: true
+//     },
+//   function(err, data){
+//     if(err) { throw err; }
+//   res.send(data)
+// })
+  // User.findOneAndUpdate({_id: req.params.userid, 'jobs._id': req.params.id}, {'jobs.$': req.body},
+  //   (err, data) => {
+  //     res.send(data);
+  //   }
+  // )
+  // User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
+  //   function(err, data){
+  //     if(err) { throw err; }
+  //     if(data === null) { res.send(404) }
+  //     data.
+  //     // res.send(data.jobs[0]);
+  //   })
 })
 
 //delete a job
