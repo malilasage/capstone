@@ -9,7 +9,6 @@ mongoose.Promise = require('bluebird');
 //get all of a users jobs
 router.get('/:id', (req, res) => {
   User.findById(req.params.id, (err, data) => {
-    console.log(req.params.id);
     if(err) { res.send(404) }
     if(data === null) { res.send(404) }
     else {
@@ -55,22 +54,20 @@ router.patch('/:userid/:id', (req, res) => {
     function(err, data){
       if(err) { throw err; }
       if(data === null) { res.send(404) }
-      updateData(data.jobs[0], req.body, (args) => {
-        res.send(args);
-            // data.save((err, data) => {
-            //   if(err) { throw err; }
-            //   res.send(data);
-            // })
+      updateData(data.jobs[0], req.body, () => {
+        //arg data is removing all jobs besides updated one
+        User.update({'jobs._id': req.params.id}, data, (err, savedData) => {
+          if(err) { throw err; }
+          res.send(savedData)
+        })
       });
     });
-
 
   function updateData(data, body, callback) {
     if(req.body.title !== undefined) {
       data.title = req.body.title;
     }
     if(body.company !== undefined) {
-      console.log('in here!');
       data.company = body.company;
     }
     if(body.description !== undefined) {
@@ -98,8 +95,7 @@ router.patch('/:userid/:id', (req, res) => {
         }
       }
     }
-    // console.log(data);
-    return callback(data);
+    return callback();
   }
 })
 
