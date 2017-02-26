@@ -18,6 +18,7 @@ const server = express()
 
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, './client')))
+server.use(express.static(path.join(__dirname, '/../', 'client')))
 server.use(express.static(path.join(__dirname, '/../', 'node_modules')))
 
 server.use('/user', require('./routes/users'))
