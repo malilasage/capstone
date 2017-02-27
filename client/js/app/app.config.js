@@ -2,7 +2,6 @@
   'use strict';
 
   angular.module('app').config(config);
-  console.log('config');
   config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
   function config($stateProvider, $urlRouterProvider, $locationProvider){
@@ -15,6 +14,11 @@
         // abstract: true,
         component: 'app',
         url: '/'
+      })
+      .state({
+        name: 'jobList',
+        component: 'jobList',
+        url: '/jobs'
       })
   }
 }())
