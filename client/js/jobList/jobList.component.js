@@ -4,6 +4,9 @@
   angular.module('app').component('jobList', {
     controller: controller,
     templateUrl: '/js/jobList/jobList.template.html',
+    bindings: {
+      jobs: '<'
+    },
     require: {
       layout: '^app'
     }
@@ -13,10 +16,12 @@
 
   function controller($jobService) {
 
-    this.$onInit = $jobService.getJobs("58b0ab4eff75c44a8ca38abc");
+    const vm = this;
 
-    // function onInit() {
-    //
-    // }
+    vm.$onInit = onInit;
+
+    function onInit() {
+
+    }
   }
 }());

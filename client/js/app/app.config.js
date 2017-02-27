@@ -25,9 +25,12 @@
         component: 'jobList',
         parent: 'app',
         url: '/jobs',
-        // resolve: {
-        //   jobs: function
-        // }
+        resolve: {
+          jobs: function($jobService) {
+            var userId = "58b0ab4eff75c44a8ca38abc";
+            return $jobService.getJobs(userId);
+          }
+        }
       })
       .state({
         name: 'jobView',
