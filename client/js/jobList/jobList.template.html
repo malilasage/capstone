@@ -1,7 +1,23 @@
-<h4>job list</h4>
-<ul>
-  <li ng-repeat="item in $ctrl.jobs">
-
-    <a ui-sref="jobView({jobId: item._id})">{{ item.title }}</a>
-  </li>
-</ul>
+<div class="pure-u-1">
+  <h4>My Jobs</h4>
+  <table class="pure-table">
+    <thead>
+      <tr>
+        <th>Job</th>
+        <th>Company</th>
+        <th>Resume</th>
+        <th>Cover Letter</th>
+        <th>Interview</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="job in $ctrl.jobs">
+        <td><a ui-sref="jobView({jobId: job._id})">{{ job.title }}</a></td>
+        <td>{{job.company}}</td>
+        <td>{{job.tasks.resumeStatus}}</td>
+        <td>{{job.tasks.coverLetterStatus}}</td>
+        <td>{{job.tasks.interview.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
