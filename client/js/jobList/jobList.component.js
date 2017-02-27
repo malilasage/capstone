@@ -21,7 +21,7 @@
     vm.$onInit = onInit;
 
     function onInit() {
-      console.log(vm.jobs[0]._id)
+
     }
   }
 }());
