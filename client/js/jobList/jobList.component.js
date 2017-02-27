@@ -3,7 +3,10 @@
 
   angular.module('app').component('jobList', {
     controller: controller,
-    templateUrl: '/js/jobList/jobList.template.html'
+    templateUrl: '/js/jobList/jobList.template.html',
+    require: {
+      layout: '^app'
+    }
   })
   function controller() {
 

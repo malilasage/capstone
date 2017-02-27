@@ -11,13 +11,14 @@
     $stateProvider
       .state({
         name: 'app',
-        // abstract: true,
-        component: 'app',
-        url: '/'
+        abstract: true,
+        component: 'app'
+        // url: '/'
       })
       .state({
         name: 'jobList',
         component: 'jobList',
+        parent: 'app',
         url: '/jobs'
       })
   }
