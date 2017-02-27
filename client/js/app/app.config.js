@@ -13,13 +13,42 @@
         name: 'app',
         abstract: true,
         component: 'app'
-        // url: '/'
+      })
+      .state({
+        name: 'landing',
+        parent: 'app',
+        component:'landing',
+        url: '/'
       })
       .state({
         name: 'jobList',
         component: 'jobList',
         parent: 'app',
         url: '/jobs'
+      })
+      .state({
+        name: 'jobView',
+        component: 'jobView',
+        parent: 'app',
+        url: '/jobview'
+      })
+      .state({
+        name: 'profile',
+        component: 'profile',
+        parent: 'app',
+        url: '/profile'
+      })
+      .state({
+        name: 'search',
+        component: 'search',
+        parent: 'app',
+        url: '/search'
+      })
+      .state({
+        name: 'about',
+        component: 'about',
+        parent: 'app',
+        url: '/about'
       })
   }
 }())
