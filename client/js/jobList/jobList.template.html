@@ -1,8 +1,9 @@
 <h4>job list</h4>
-<a ui-sref="jobView">job view</a>
+<!-- <a ui-sref="jobView">job view</a> -->
 <ul>
-  <li ng-repeat="job in $ctrl.jobs">
-    <a ui-sref="jobView({})"></a>
-    <p>{{ job.title }}</p>
+  <li ng-repeat="item in $ctrl.jobs">
+
+    <a ui-sref="jobView({jobId: item._id})">{{ item.title }}</a>
+    <!-- <p>{{ job.title }}</p> -->
   </li>
 </ul>

@@ -3,10 +3,19 @@
 
   angular.module('app').component('jobView', {
     controller: controller,
-    templateUrl: '/js/jobView/jobView.template.html'
+    templateUrl: '/js/jobView/jobView.template.html',
+    bindings: {
+      job: '<'
+    }
   })
-  function controller() {
-    this.$onInit = onInit;
+
+  controller.$inject = ['$jobService'];
+
+  function controller($jobService) {
+
+    const vm = this;
+
+    vm.$onInit = onInit;
 
     function onInit() {
     }

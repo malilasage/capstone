@@ -36,7 +36,13 @@
         name: 'jobView',
         component: 'jobView',
         parent: 'app',
-        url: '/jobview'
+        url: '/jobs/{jobId}',
+        resolve: {
+          job: function($jobService, $transition$) {
+
+            return $jobService.getJob($transition$.params().jobId);
+          }
+        }
       })
       .state({
         name: 'profile',
