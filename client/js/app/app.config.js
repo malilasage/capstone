@@ -47,7 +47,13 @@
         name: 'profile',
         component: 'profile',
         parent: 'app',
-        url: '/profile'
+        url: '/profile',
+        resolve: {
+          user: function($userService) {
+            var userId = "58b0ab4eff75c44a8ca38abc";
+            return $userService.getUser(userId);
+          }
+        }
       })
       .state({
         name: 'search',
