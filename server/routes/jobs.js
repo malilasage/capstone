@@ -64,8 +64,8 @@ router.patch('/:userid/:id', (req, res) => {
     });
 
   function updateData(data, body, callback) {
-    if(req.body.title !== undefined) {
-      data.title = req.body.title;
+    if(body.title !== undefined) {
+      data.title = body.title;
     }
     if(body.company !== undefined) {
       data.company = body.company;
