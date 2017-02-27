@@ -24,7 +24,10 @@
         name: 'jobList',
         component: 'jobList',
         parent: 'app',
-        url: '/jobs'
+        url: '/jobs',
+        // resolve: {
+        //   jobs: function
+        // }
       })
       .state({
         name: 'jobView',
