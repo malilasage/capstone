@@ -1,5 +1,20 @@
-<h4>job view</h4>
-
-<h2>{{ $ctrl.job.title }}</h2>
-
-<p>{{ $ctrl.job.description }}</p>
+<div class="pure-u-1 mc-content">
+  <table class="pure-table pure-u-1-3">
+    <tr>
+      <th>Resume</th>
+      <td>{{ $ctrl.job.tasks.resumeStatus }}</td>
+    </tr>
+    <tr>
+      <th>Cover Letter</th>
+      <td>{{ $ctrl.job.tasks.coverLetterStatus }}</td>
+    </tr>
+    <tr>
+      <th>Interview</th>
+      <td>{{ $ctrl.job.tasks.interview.status }}</td>
+    </tr>
+  </table>
+  <div class="pure-u-3-5">
+    <h4>{{ $ctrl.job.title }}</h4>
+    <p>{{ $ctrl.job.description }}</p>
+  </div>
+</div>

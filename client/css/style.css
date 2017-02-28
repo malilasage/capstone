@@ -6,3 +6,18 @@
 .mc-nav {
   background-color: #d3d3d3;
 }
+
+
+
+h4 {
+  text-align: center;
+}
+
+.mc-content{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 50%;
+}
