@@ -16,21 +16,21 @@ const JobsSchema = new Schema({
   },
     tasks: {
       resumeStatus: {
-        type: String, default: null
+        type: String, default: "fa-minus"
       },
       coverLetterStatus: {
-        type: String, default: null
+        type: String, default: "fa-minus"
       },
       interview: {
         status: {
-          type: String, default: null
+          type: String, default: "fa-minus"
         },
         date: {
-          type: String, default: null
+          type: String, default: "fa-minus"
         }
       },
       deadline: {
-        type: String, default: null
+        type: String, default: "fa-minus"
       }
     },
   createdAt: { type: Date, default: Date.now}

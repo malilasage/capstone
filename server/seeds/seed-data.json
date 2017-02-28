@@ -12,13 +12,13 @@
         "description": "Woke mlkshk wolf gentrify jianbing, swag leggings 90's PBR&B raw denim photo booth. Meggings keffiyeh locavore, four loko drinking vinegar intelligentsia banjo farm-to-table asymmetrical. Church-key chartreuse gastropub, occupy skateboard vice flannel pok pok pabst listicle paleo bushwick snackwave craft beer. Twee squid jianbing swag hexagon, sustainable dreamcatcher normcore. Ugh banh mi enamel pin af narwhal. Vinyl bespoke kogi, crucifix four loko semiotics affogato helvetica scenester vape kickstarter cronut yuccie ennui. Lo-fi bespoke meditation tofu celiac art party.",
         "notes": "Sounds great, especially if Hermione is running the ministry. Vinyl bespoke kogi, crucifix four loko semiotics affogato helvetica scenester vape kickstarter cronut yuccie ennui.",
         "tasks": {
-            "coverLetterStatus": "written",
+            "coverLetterStatus": "fa-pencil",
             "deadline": "2017-03-05T22:05:11.643Z",
             "interview": {
                 "date": "2017-03-01T10:30:11.643Z",
-                "status": "pending"
+                "status": "fa-calendar-check-o"
             },
-            "resumeStatus": "written"
+            "resumeStatus": "fa-pencil"
         },
         "title": "Auror"
     },
@@ -29,13 +29,13 @@
         "description": "Raw denim flannel jean shorts raclette, kickstarter viral meggings ennui hexagon narwhal slow-carb four loko schlitz. Live-edge narwhal four dollar toast, subway tile locavore twee small batch direct trade franzen. Cray direct trade activated charcoal occupy wayfarers, swag succulents kale chips PBR&B. Ennui swag tote bag, poutine gochujang readymade wolf migas fingerstache. Chicharrones franzen photo booth craft beer twee. Gastropub vaporware brunch plaid master cleanse kale chips. Squid leggings woke irony, cray selvage actually fingerstache.",
         "notes": "Dull",
         "tasks": {
-            "coverLetterStatus": null,
+            "coverLetterStatus": "fa-minus",
             "deadline": "2017-03-29T22:05:11.643Z",
             "interview": {
-                "date": null,
-                "status": null
+                "date": "fa-minus",
+                "status": "fa-minus"
             },
-            "resumeStatus": "written"
+            "resumeStatus": "fa-pencil"
         },
         "title": "DADA Professor"
     },
@@ -46,13 +46,13 @@
         "description": "Fap austin swag, offal skateboard wayfarers freegan lyft photo booth chicharrones trust fund ramps letterpress synth hell of. XOXO banh mi edison bulb tbh williamsburg, irony mustache. Yr cold-pressed slow-carb, gluten-free pop-up jianbing copper mug locavore fixie. Flannel plaid pabst, vinyl bitters chillwave mixtape 8-bit banjo normcore prism enamel pin iPhone. Brooklyn blog hashtag, drinking vinegar kogi keytar brunch scenester offal next level godard. Chicharrones flexitarian fashion axe man braid, next level ugh fixie mustache paleo vegan PBR&B ennui af humblebrag poke. 90's forage meditation unicorn, put a bird on it gastropub tilde tattooed. \n Portland mumblecore gluten-free letterpress jean shorts sartorial subway tile keytar. Knausgaard single-origin coffee echo park, crucifix vaporware tilde blog distillery poutine shoreditch hell of. Chambray cardigan 3 wolf moon deep v green juice, butcher banh mi yr prism squid church-key helvetica. Shabby chic sustainable tattooed, direct trade affogato you probably haven't heard of them authentic put a bird on it brooklyn. Fap biodiesel mixtape activated charcoal. Kombucha artisan fixie, flannel messenger bag locavore jianbing letterpress. Portland iceland kale chips knausgaard mustache neutra. \n Dreamcatcher next level bushwick post-ironic enamel pin. Photo booth celiac whatever beard man bun, vegan skateboard listicle. Small batch kinfolk chia, lumbersexual air plant prism godard hell of. Hammock letterpress +1 drinking vinegar, activated charcoal everyday carry try-hard. Leggings kogi vexillologist, pitchfork small batch 3 wolf moon gluten-free cred. Raw denim sartorial succulents celiac, post-ironic wayfarers pickled enamel pin chillwave keytar irony chia slow-carb. 90's lo-fi kombucha swag kitsch bicycle rights.",
         "notes": "Small batch kinfolk chia, lumbersexual air plant prism godard hell of. Hammock letterpress +1 drinking vinegar, activated charcoal everyday carry try-hard.",
         "tasks": {
-            "coverLetterStatus": "written",
-            "deadline": null,
+            "coverLetterStatus": "fa-pencil",
+            "deadline": "fa-minus",
             "interview": {
-                "date": null,
-                "status": null
+                "date": "fa-minus",
+                "status": "fa-minus"
             },
-            "resumeStatus": "written"
+            "resumeStatus": "fa-pencil"
         },
         "title": "Ice Cream Scooper"
     },
@@ -63,15 +63,15 @@
         "description": "Keytar celiac fashion axe, disrupt craft beer venmo kale chips DIY before they sold out synth typewriter gochujang unicorn. Master cleanse franzen church-key put a bird on it yuccie keytar. Raclette copper mug lomo, PBR&B brooklyn street art butcher roof party. Chicharrones vaporware organic blog sartorial vinyl. Pop-up cred hell of direct trade +1, organic fashion axe post-ironic. Tumeric kickstarter organic keytar offal, man bun PBR&B. Coloring book meh jianbing, tbh kickstarter twee kale chips hot chicken fap art party. \n Irony put a bird on it cold-pressed four dollar toast trust fund. Prism hoodie PBR&B, pour-over umami raclette hammock bicycle rights before they sold out health goth craft beer snackwave williamsburg gochujang. Sustainable portland quinoa, forage small batch mlkshk migas truffaut kogi jianbing venmo wayfarers. Typewriter drinking vinegar aesthetic offal, etsy ethical prism small batch kinfolk fam kombucha irony art party flannel. Twee austin kickstarter bushwick, blog chicharrones tumeric 90's lomo disrupt narwhal. DIY kickstarter shoreditch kale chips you probably haven't heard of them aesthetic. Retro shoreditch pok pok hoodie.",
         "notes": null,
         "tasks": {
-            "coverLetterStatus": null,
-            "deadline": null,
+            "coverLetterStatus": "fa-minus",
+            "deadline": "fa-minus",
             "interview": {
-                "date": null,
-                "status": null
+                "date": "fa-minus",
+                "status": "fa-minus"
             },
-            "resumeStatus": "written"
+            "resumeStatus": "fa-pencil"
         },
-        "title": null
+        "title": "Prank Master"
     }
   ]
 }

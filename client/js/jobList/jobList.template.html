@@ -11,12 +11,17 @@
           <div class="dropdown-content">
             <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
             <a ng-click="sort='company'; sortName='Company'">Company</a>
-            <a>Status</a>
+            <a>Recently Submitted</a>
+            <!-- Status, Progress, Upcoming interview -->
           </div>
         </div>
       </li>
+      <li class="pure-menu-item">
+        <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
+      </li>
     </ul>
   </div>
+
   <table class="pure-table pure-table-horizontal">
     <thead>
       <tr>
@@ -31,9 +36,9 @@
       <tr ng-repeat="job in $ctrl.jobs | filter:search | orderBy:sort">
         <td><a ui-sref="jobView({jobId: job._id})">{{ job.title }}</a></td>
         <td>{{job.company}}</td>
-        <td>{{job.tasks.resumeStatus}}</td>
-        <td>{{job.tasks.coverLetterStatus}}</td>
-        <td>{{job.tasks.interview.status}}</td>
+        <td><i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
+        <td><i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
+        <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
       </tr>
     </tbody>
   </table>

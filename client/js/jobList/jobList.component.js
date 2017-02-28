@@ -19,8 +19,13 @@
     const vm = this;
 
     vm.$onInit = onInit;
+    vm.openModal = openModal;
 
     function onInit() {
+
+    }
+
+    function openModal() {
 
     }
   }
