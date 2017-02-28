@@ -14,7 +14,7 @@
       };
 
       this.getJob = function getJob(jobId) {
-        console.log(jobId)
+        console.log(jobId);
         return $http({
            method:'GET',
            url: `/jobs/job/${jobId}`

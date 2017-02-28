@@ -36,10 +36,12 @@
         name: 'jobView',
         component: 'jobView',
         parent: 'app',
-        url: '/jobs/:jobId',
+        url: '/job/:jobId',
         resolve: {
-          job: function($jobService, $transition$) {
-            return $jobService.getJob($transition$.params().jobId);
+          job: function($jobService, $transition$, $stateParams) {
+            console.log($stateParams.jobId);
+            // return $jobService.getJob($transition$.params().jobId);
+            return $jobService.getJob($stateParams.jobId);
           }
         }
       })
