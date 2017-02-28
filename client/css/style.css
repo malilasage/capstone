@@ -9,11 +9,11 @@
 
 
 
-h4 {
+.mc-t-center {
   text-align: center;
 }
 
-.mc-content{
+.mc-center{
   position: absolute;
   left: 50%;
   top: 50%;
