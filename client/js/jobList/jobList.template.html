@@ -1,5 +1,6 @@
 <div class="pure-u-1 mc-center">
   <h4>My Jobs</h4>
+  <input type="search" placeholder="Filter" ng-model="search">
   <table class="pure-table pure-table-horizontal">
     <thead>
       <tr>
@@ -11,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="job in $ctrl.jobs">
+      <tr ng-repeat="job in $ctrl.jobs | filter:search">
         <td><a ui-sref="jobView({jobId: job._id})">{{ job.title }}</a></td>
         <td>{{job.company}}</td>
         <td>{{job.tasks.resumeStatus}}</td>
