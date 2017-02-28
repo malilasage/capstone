@@ -1,6 +1,22 @@
 <div class="pure-u-1 mc-center">
   <h4>My Jobs</h4>
-  <input type="search" placeholder="Filter" ng-model="search">
+  <div class="pure-menu pure-menu-horizontal">
+    <ul>
+      <li class="pure-menu-item">
+          <input type="search" placeholder="Filter" ng-model="search">
+      </li>
+      <li class="pure-menu-item">
+        <div class="dropdown" ng-init="sort='title'; sortName='Job Title'">
+        <button class="dropbtn">Sort By {{ sortName }}</button>
+          <div class="dropdown-content">
+            <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
+            <a ng-click="sort='company'; sortName='Company'">Company</a>
+            <a>Status</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
   <table class="pure-table pure-table-horizontal">
     <thead>
       <tr>
@@ -12,7 +28,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="job in $ctrl.jobs | filter:search">
+      <tr ng-repeat="job in $ctrl.jobs | filter:search | orderBy:sort">
         <td><a ui-sref="jobView({jobId: job._id})">{{ job.title }}</a></td>
         <td>{{job.company}}</td>
         <td>{{job.tasks.resumeStatus}}</td>
