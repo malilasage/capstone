@@ -34,8 +34,8 @@ server.use(function(req, res, next) {
   next(err)
 })
 
-server.listen(port, () => {
-  console.log('Listening on port', port);
-})
+// server.listen(port, () => {
+//   console.log('Listening on port', port);
+// })
 
 module.exports = server

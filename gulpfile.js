@@ -8,11 +8,12 @@ gulp.task('default', ['browser-sync'], function () {
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init({
     proxy: 'http://localhost:3000',
-    files: ['capstone/client/**/*.*'],
+    files: ['client/**/*.*'],
     browser: 'google chrome',
     port: 7000,
 		reloadDelay: 1000,
   })
+  // gulp.watch('capstone').on('change', browserSync.reload);
 })
 
 gulp.task('nodemon', function (cb) {
@@ -21,7 +22,7 @@ gulp.task('nodemon', function (cb) {
   return nodemon({
     script: './bin/www',
     ignore: [
-      'app/public/',
+      // 'capstone/client/',
       'gulpfile.js',
       'node_modules/'
     ],
