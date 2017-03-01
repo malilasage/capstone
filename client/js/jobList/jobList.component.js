@@ -20,6 +20,7 @@
 
     vm.$onInit = onInit;
     vm.openModal = openModal;
+    vm.popUpOpen = popUpOpen;
 
     function onInit() {
 
@@ -27,6 +28,14 @@
 
     function openModal() {
 
+    }
+
+    function popUpOpen(id) {
+      console.log(id);
+      //is showing on all elements. make func(job.resumeStatus || job.clStatus) n try that?
+      // console.log(id);
+      // console.log();
+      vm.popUp = !vm.popUp;
     }
   }
 }());

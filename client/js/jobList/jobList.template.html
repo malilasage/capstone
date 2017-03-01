@@ -36,7 +36,9 @@
       <tr ng-repeat="job in $ctrl.jobs | filter:search | orderBy:sort">
         <td><a ui-sref="jobView({jobId: job._id})">{{ job.title }}</a></td>
         <td>{{job.company}}</td>
-        <td><i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
+        <td class="popup">
+          <span class="popuptext" id="myPopup" ng-if="$ctrl.popUp">Popup text...</span>
+          <button  ng-mouseover="$ctrl.popUpOpen($index)"><i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></button></td>
         <td><i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
         <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
       </tr>
