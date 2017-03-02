@@ -5,12 +5,17 @@
     controller: controller,
     templateUrl: '/js/app/app.template.html'
   })
-  function controller() {
+
+  function controller($state) {
 
     this.$onInit = onInit;
 
     function onInit() {
+      var user = {
+        loggedIn: false
+      }
 
+      $state.go(user.loggedIn ? 'dashboard' : 'landing');
     }
   }
 }());

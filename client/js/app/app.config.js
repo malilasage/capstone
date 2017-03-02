@@ -21,6 +21,12 @@
         url: '/'
       })
       .state({
+        name: 'dashboard',
+        parent: 'app',
+        component: 'dashboard',
+        url: '/dashboard'
+      })
+      .state({
         name: 'jobList',
         component: 'jobList',
         parent: 'app',
