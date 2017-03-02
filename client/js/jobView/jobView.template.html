@@ -19,12 +19,18 @@
     <p>{{ $ctrl.job.description }}</p>
     <br>
     <h4 class="pure-u-3-5">Notes</h4>
-    <i class="fa fa-pencil pure-u-1-5" ng-click="$ctrl.toggleEditNotes()"></i>
+    <i class="fa fa-pencil" ng-click="$ctrl.toggleEditNotes()"></i>
     <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
     <div ng-if="$ctrl.showEditNotes">
       <textarea ng-model="$ctrl.newNotes" name="" id="" cols="60" rows="10"></textarea>
       <button ng-click="$ctrl.submitNotes($ctrl.newNotes)">Save Notes</button>
       <button ng-click="$ctrl.toggleEditNotes()">Cancel</button>
     </div>
+    <br>
+    <h4>
+      <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+      Company Reviews
+    </h4>
+    <!-- <p>{{ $ctrl.glassdoor }}</p> -->
   </div>
 </div>

@@ -10,6 +10,7 @@
     this.$onInit = onInit;
 
     function onInit() {
+
     }
   }
 }());

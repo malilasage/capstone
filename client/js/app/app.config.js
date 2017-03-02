@@ -64,6 +64,18 @@
         url: '/search'
       })
       .state({
+        name: 'searchResults',
+        component: 'searchResults',
+        parent: 'search',
+        url: '/search-results/:job/:location'
+        // resolve: {
+        //   results: function($stateParams) {
+        //     console.log($stateParams);
+        //     return $stateParams;
+        //   }
+        // }
+      })
+      .state({
         name: 'about',
         component: 'about',
         parent: 'app',

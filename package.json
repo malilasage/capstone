@@ -32,7 +32,8 @@
     "gulp-nodemon": "^2.2.1",
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.4",
-    "purecss": "^0.6.2"
+    "purecss": "^0.6.2",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8"

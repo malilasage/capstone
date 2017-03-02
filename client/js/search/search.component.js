@@ -5,10 +5,22 @@
     controller: controller,
     templateUrl: '/js/search/search.template.html'
   })
-  function controller() {
-    this.$onInit = onInit;
+
+  controller.$inject = ['$state'];
+
+  function controller($state) {
+    const vm = this;
+
+    vm.$onInit = onInit;
+    vm.submitSearch = submitSearch;
 
     function onInit() {
+    }
+
+    function submitSearch(search) {
+      console.log('cool');
+      console.log(search);
+      $state.go('searchResults', {'job': search.job, 'location': search.location});
     }
   }
 }())
