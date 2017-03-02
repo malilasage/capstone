@@ -5,7 +5,8 @@
     controller: controller,
     templateUrl: '/js/jobView/jobView.template.html',
     bindings: {
-      job: '<'
+      job: '<',
+      glassdoor: '<'
     }
   })
 
@@ -20,10 +21,7 @@
     vm.submitNotes = submitNotes;
 
     function onInit() {
-      vm.glassdoor = 'data'
-      // $http.get(`http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=128556&t.k=kjwbHdKegvO&action=employers&q=${vm.job.company}&userip=208.184.3.194&useragent=Mozilla/%2F4.0`).then((res) => {
-      //   console.log(res);
-      // })
+
     }
 
     function toggleEditNotes() {

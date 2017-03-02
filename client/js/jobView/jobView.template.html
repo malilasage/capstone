@@ -27,10 +27,12 @@
       <button ng-click="$ctrl.toggleEditNotes()">Cancel</button>
     </div>
     <br>
-    <h4>
-      <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
-      Company Reviews
-    </h4>
-    <!-- <p>{{ $ctrl.glassdoor }}</p> -->
+    <div ng-if="$ctrl.glassdoor">
+      <h4>
+        <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+        Company Reviews
+      </h4>
+      <p>{{ $ctrl.glassdoor }}</p>
+    </div>
   </div>
 </div>

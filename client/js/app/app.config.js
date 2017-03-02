@@ -36,12 +36,15 @@
         name: 'jobView',
         component: 'jobView',
         parent: 'app',
-        url: '/job/:jobId',
+        url: '/job/:company/:jobId',
         resolve: {
           job: function($jobService, $transition$, $stateParams) {
             console.log($stateParams.jobId);
             // return $jobService.getJob($transition$.params().jobId);
             return $jobService.getJob($stateParams.jobId);
+          },
+          glassdoor: function($jobService, $stateParams) {
+            return $jobService.getGlassdoor($stateParams.company);
           }
         }
       })
@@ -67,13 +70,13 @@
         name: 'searchResults',
         component: 'searchResults',
         parent: 'search',
-        url: '/search-results/:job/:location'
-        // resolve: {
-        //   results: function($stateParams) {
-        //     console.log($stateParams);
-        //     return $stateParams;
-        //   }
-        // }
+        url: '/search-results/:job/:location',
+        resolve: {
+          results: function($stateParams) {
+            console.log($stateParams);
+            return $stateParams;
+          }
+        }
       })
       .state({
         name: 'about',

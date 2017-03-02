@@ -23,5 +23,23 @@
           return data.data;
         })
       }
+      this.getGlassdoor = function getGlassdoor(company) {
+        return $http({
+          method:'GET',
+          url: '/glassdoor',
+          params: {
+            company: company
+          }
+        })
+        .then((data, err) => {
+          if(err) { throw err; }
+          if(data.data.response.employers[0].exactMatch === true) {
+            return data.data.response.employers[0];
+          }
+          else {
+            return null;
+          }
+        })
+      }
     })
 }())

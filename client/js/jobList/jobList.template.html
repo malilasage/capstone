@@ -34,7 +34,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="job in $ctrl.jobs | filter:search | orderBy:sort">
-        <td><a ui-sref="jobView({jobId: job._id})">{{ job.title }}</a></td>
+        <td><a ui-sref="jobView({company: job.company, jobId: job._id})">{{ job.title }}</a></td>
         <td>{{job.company}}</td>
         <td class="popup">
           <span class="popuptext" id="myPopup" ng-if="$ctrl.popUp">Popup text...</span>
