@@ -14,7 +14,6 @@
       };
 
       this.getJob = function getJob(jobId) {
-        console.log(jobId);
         return $http({
            method:'GET',
            url: `/jobs/job/${jobId}`
@@ -33,11 +32,11 @@
         })
         .then((data, err) => {
           if(err) { throw err; }
-          if(data.data.response.employers[0].exactMatch === true) {
-            return data.data.response.employers[0];
+          if((data.data.response.employers.length === 0) || (data.data.response.employers[0].exactMatch !== true))  {
+            return null;
           }
           else {
-            return null;
+            return data.data.response.employers[0];;
           }
         })
       }

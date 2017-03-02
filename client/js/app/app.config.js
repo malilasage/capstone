@@ -39,7 +39,6 @@
         url: '/job/:company/:jobId',
         resolve: {
           job: function($jobService, $transition$, $stateParams) {
-            console.log($stateParams.jobId);
             // return $jobService.getJob($transition$.params().jobId);
             return $jobService.getJob($stateParams.jobId);
           },

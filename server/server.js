@@ -41,8 +41,6 @@ server.get('/glassdoor', (req, res) => {
     company: encodeURIComponent(req.query.company)
   };
 
-  console.log(searchInfo);
-
   const newUrl = `http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=128556&t.k=kjwbHdKegvO&action=employers&q=${searchInfo.company}&userip=208.184.3.194&useragent=Mozilla/%2F4.0`;
 
   return request(newUrl).pipe(res);
