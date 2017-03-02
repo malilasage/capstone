@@ -14,7 +14,17 @@
     </tr>
   </table>
   <div class="pure-u-3-5">
-    <h4>{{ $ctrl.job.title }}</h4>
+    <h2>{{ $ctrl.job.title }}</h2>
+    <h4>{{ $ctrl.job.company }}</h4>
     <p>{{ $ctrl.job.description }}</p>
+    <br>
+    <h4 class="pure-u-3-5">Notes</h4>
+    <i class="fa fa-pencil pure-u-1-5" ng-click="$ctrl.toggleEditNotes()"></i>
+    <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
+    <div ng-if="$ctrl.showEditNotes">
+      <textarea ng-model="$ctrl.newNotes" name="" id="" cols="60" rows="10"></textarea>
+      <button ng-click="$ctrl.submitNotes($ctrl.newNotes)">Save Notes</button>
+      <button ng-click="$ctrl.toggleEditNotes()">Cancel</button>
+    </div>
   </div>
 </div>

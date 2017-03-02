@@ -37,5 +37,6 @@
       // console.log();
       vm.popUp = !vm.popUp;
     }
+
   }
 }());

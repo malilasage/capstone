@@ -38,10 +38,14 @@
         <td>{{job.company}}</td>
         <td class="popup">
           <span class="popuptext" id="myPopup" ng-if="$ctrl.popUp">Popup text...</span>
-          <button  ng-mouseover="$ctrl.popUpOpen($index)"><i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></button></td>
+          <button ng-mouseover="$ctrl.popUpOpen($index)"><i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></button></td>
         <td><i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
         <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<modal-dialog show='modalShown' width='750px' height='90%'>
+  <p>Modal Content Goes here<p>
+</modal-dialog>
