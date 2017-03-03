@@ -19,15 +19,15 @@
     const vm = this;
 
     vm.$onInit = onInit;
-    vm.openModal = openModal;
+    vm.toggleModal = toggleModal;
     vm.popUpOpen = popUpOpen;
 
     function onInit() {
 
     }
 
-    function openModal() {
-
+    function toggleModal() {
+      vm.openModal = !vm.openModal;
     }
 
     function popUpOpen(id) {

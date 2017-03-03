@@ -16,7 +16,7 @@
           </div>
         </div>
       </li>
-      <li class="pure-menu-item">
+      <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
         <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
       </li>
     </ul>
@@ -46,6 +46,11 @@
   </table>
 </div>
 
-<modal-dialog show='modalShown' width='750px' height='90%'>
-  <p>Modal Content Goes here<p>
-</modal-dialog>
+<div ng-if="$ctrl.openModal" id="modal">
+  <div class='ng-modal-overlay' ng-click='$ctrl.toggleModal()'></div>
+
+    <div class='ng-modal-dialog'>
+      <h4>modal</h4>
+      <div class='ng-modal-close' ng-click='$ctrl.toggleModal()'>X</div>
+    </div>
+</div>

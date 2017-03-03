@@ -18,7 +18,6 @@
     vm.$onInit = onInit;
 
     function onInit() {
-      console.log(vm.jobData);
       var data1 = [0, 0];
       for (var i = 0; i < vm.jobData.length; i++) {
         if(vm.jobData[i].tasks.resumeStatus === 'fa-check') {
