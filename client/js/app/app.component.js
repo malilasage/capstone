@@ -14,7 +14,7 @@
       var user = {
         loggedIn: true
       }
-      $state.go(user.loggedIn ? 'dashboard' : 'landing');
+      // $state.go(user.loggedIn ? 'dashboard' : 'landing');
     }
   }
 }());

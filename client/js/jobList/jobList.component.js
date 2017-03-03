@@ -20,6 +20,7 @@
 
     vm.$onInit = onInit;
     vm.toggleModal = toggleModal;
+    vm.createJob = createJob;
     vm.popUpOpen = popUpOpen;
 
     function onInit() {
@@ -28,6 +29,10 @@
 
     function toggleModal() {
       vm.openModal = !vm.openModal;
+    }
+
+    function createJob() {
+      console.log(vm.newJob);
     }
 
     function popUpOpen(id) {

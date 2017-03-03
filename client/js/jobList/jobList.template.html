@@ -48,9 +48,38 @@
 
 <div ng-if="$ctrl.openModal" id="modal">
   <div class='ng-modal-overlay' ng-click='$ctrl.toggleModal()'></div>
-
-    <div class='ng-modal-dialog'>
-      <h4>modal</h4>
+    <div class='ng-modal-dialog pure-u-1'>
+      <h4>Add New Job</h4>
       <div class='ng-modal-close' ng-click='$ctrl.toggleModal()'>X</div>
+      <div class='ng-modal-dialog-content'>
+        <div>
+          <form class="pure-form">
+            <fieldset>
+              <legend>Enter URL Here:</legend>
+              <input type="text" placeholder="Enter Job Listing URL">
+              <button class="pure-button">Get Data</button>
+            </fieldset>
+          </form>
+          <p>or</p>
+          <form class="pure-form" novalidate ng-submit="$ctrl.createJob()" name="form">
+            <!-- <fieldset> -->
+              <legend>Enter Job Information Yourself</legend>
+                <div class="pure-control-group">
+                  <label>Job Title</label>
+                  <input ng-model="$ctrl.newJob.title">
+                </div>
+                <div class="pure-control-group">
+                  <label>Company</label>
+                  <input ng-model="$ctrl.newJob.company">
+                </div>
+                <div class="pure-control-group">
+                  <label>Job Description</label>
+                  <textarea ng-model="$ctrl.newJob.description" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="pure-button">Submit</button>
+            <!-- </fieldset> -->
+          </form>
+        </div>
+      </div>
     </div>
 </div>
