@@ -56,28 +56,28 @@
           <form class="pure-form">
             <fieldset>
               <legend>Enter URL Here:</legend>
-              <input type="text" placeholder="Enter Job Listing URL">
+              <input type="url" placeholder="Enter Job Listing URL">
               <button class="pure-button">Get Data</button>
             </fieldset>
           </form>
           <p>or</p>
           <form class="pure-form" novalidate ng-submit="$ctrl.createJob()" name="form">
-            <!-- <fieldset> -->
+            <fieldset>
               <legend>Enter Job Information Yourself</legend>
-                <div class="pure-control-group">
-                  <label>Job Title</label>
-                  <input ng-model="$ctrl.newJob.title">
-                </div>
-                <div class="pure-control-group">
-                  <label>Company</label>
-                  <input ng-model="$ctrl.newJob.company">
-                </div>
-                <div class="pure-control-group">
-                  <label>Job Description</label>
-                  <textarea ng-model="$ctrl.newJob.description" cols="30" rows="10"></textarea>
-                </div>
-                <button type="submit" class="pure-button">Submit</button>
-            <!-- </fieldset> -->
+              <div class="pure-control-group" ng-class="{error: form.title.$invalid }">
+                <label>Job Title</label>
+                <input name="title" ng-model="$ctrl.newJob.title" required>
+              </div>
+              <div class="pure-control-group" ng-class="{error: form.company.$invalid }">
+                <label>Company</label>
+                <input name="company" ng-model="$ctrl.newJob.company" required>
+              </div>
+              <div class="pure-control-group" ng-class="{error: form.description.$invalid }">
+                <label>Job Description</label>
+                <textarea name="description" ng-model="$ctrl.newJob.description" cols="30" rows="10" required></textarea>
+              </div>
+              <button type="submit" class="pure-button" ng-disabled="form.$invalid">Submit</button>
+            </fieldset>
           </form>
         </div>
       </div>

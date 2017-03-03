@@ -42,7 +42,8 @@ router.post('/:userid', (req, res) => {
       });
       data.save((err, data) => {
           if (err) throw err;
-          res.send(data);
+          var index = data.jobs.length - 1;
+          res.send(data.jobs[index]);
         })
       }
   })

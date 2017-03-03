@@ -32,7 +32,9 @@
     }
 
     function createJob() {
-      console.log(vm.newJob);
+      var userId = "58b0ab4eff75c44a8ca38abc";
+      $jobService.postJob(vm.newJob, userId);
+      toggleModal();
     }
 
     function popUpOpen(id) {
