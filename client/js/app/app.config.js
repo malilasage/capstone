@@ -11,26 +11,32 @@
     $stateProvider
       .state({
         name: 'app',
-        abstract: true,
-        component: 'app'
+        component: 'app',
+        url: '/'
       })
       .state({
         name: 'landing',
         parent: 'app',
         component:'landing',
-        url: '/'
+        url: 'landing'
       })
       .state({
         name: 'dashboard',
         parent: 'app',
         component: 'dashboard',
-        url: '/dashboard'
+        url: 'dashboard',
+        resolve: {
+          jobData: function($jobService) {
+            var userId = "58b0ab4eff75c44a8ca38abc";
+            return $jobService.getJobs(userId);
+          }
+        }
       })
       .state({
         name: 'jobList',
         component: 'jobList',
         parent: 'app',
-        url: '/jobs',
+        url: 'jobs',
         resolve: {
           jobs: function($jobService) {
             var userId = "58b0ab4eff75c44a8ca38abc";
@@ -42,7 +48,7 @@
         name: 'jobView',
         component: 'jobView',
         parent: 'app',
-        url: '/job/:company/:jobId',
+        url: 'job/:company/:jobId',
         resolve: {
           job: function($jobService, $transition$, $stateParams) {
             // return $jobService.getJob($transition$.params().jobId);
@@ -57,7 +63,7 @@
         name: 'profile',
         component: 'profile',
         parent: 'app',
-        url: '/profile',
+        url: 'profile',
         resolve: {
           user: function($userService) {
             var userId = "58b0ab4eff75c44a8ca38abc";
@@ -69,7 +75,7 @@
         name: 'search',
         component: 'search',
         parent: 'app',
-        url: '/search'
+        url: 'search'
       })
       .state({
         name: 'searchResults',
@@ -87,7 +93,7 @@
         name: 'about',
         component: 'about',
         parent: 'app',
-        url: '/about'
+        url: 'about'
       })
   }
 }())

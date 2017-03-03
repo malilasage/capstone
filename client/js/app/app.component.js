@@ -12,9 +12,8 @@
 
     function onInit() {
       var user = {
-        loggedIn: false
+        loggedIn: true
       }
-
       $state.go(user.loggedIn ? 'dashboard' : 'landing');
     }
   }
