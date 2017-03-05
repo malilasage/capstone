@@ -43,7 +43,7 @@
         <td>
           <span class="popuptext" id="myPopup" ng-if="$ctrl.popUp">Popup text...</span>
           <button ng-mouseover="$ctrl.popUpOpen($index)"><i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></button></td>
-        <td  ng-click="$ctrl.togglePopup()">
+        <td ng-click="$ctrl.togglePopup()">
           <popup show="$ctrl.showPopup" width='750px' height='60%' job-data="job"></popup>
           <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
         <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
