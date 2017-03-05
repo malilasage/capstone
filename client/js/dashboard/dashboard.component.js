@@ -28,6 +28,7 @@
         }
       }
       initCharts(data1);
+      initCounter(vm.jobData.length);
     }
   }
 
@@ -78,6 +79,20 @@
       }
     })
 
+  }
+
+  function initCounter(num) {
+    var options = {
+      useEasing : true,
+      useGrouping : true,
+      separator : ',',
+      decimal : '.',
+      prefix : '',
+      suffix : ''
+    };
+    var duration = num < 8 ? 3 : 2.5;
+    var dashboardCounter = new CountUp("dashboardCounter", 0, num, 0, duration, options);
+    dashboardCounter.start();
   }
 
 }());
