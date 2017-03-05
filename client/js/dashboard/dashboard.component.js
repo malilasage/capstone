@@ -5,13 +5,12 @@
     controller: controller,
     templateUrl: '/js/dashboard/dashboard.template.html',
     bindings: {
-      jobData: '<'
+      jobData: '<',
+      user: '<'
     }
   })
 
-  controller.$inject = ['$jobService'];
-
-  function controller($jobService) {
+  function controller() {
 
     const vm = this;
 

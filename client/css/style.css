@@ -43,9 +43,9 @@ nav ul, footer ul{
 
 .mc-right {
   float: right;
-  margin-right: 5%;
-  position: relative;
-  right: 3em;
+  padding-right: 10%;
+  /*position: relative;*/
+  /*right: 3em;*/
 }
 
 .mc-left {
@@ -62,14 +62,14 @@ nav ul, footer ul{
   text-align: center;
 }
 
-/*.mc-center{*/
-  /*position: absolute;*/
-  /*left: 50%;*/
-  /*top: 50%;*/
-  /*transform: translate(-50%, -50%);*/
-  /*width: 75%;*/
-  /*height: 50%;*/
-/*}*/
+/*.mc-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 50%;
+}*/
 
 /*--------- dropdown ---------*/
 
