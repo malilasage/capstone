@@ -1,16 +1,17 @@
+<div class="mc-height">
 <div class="pure-u-1 mc-center">
   <table class="pure-table pure-u-1-3">
     <tr>
       <th>Resume</th>
-      <td>{{ $ctrl.job.tasks.resumeStatus }}</td>
+      <td><i class="fa {{ $ctrl.job.tasks.resumeStatus }}"></i></td>
     </tr>
     <tr>
       <th>Cover Letter</th>
-      <td>{{ $ctrl.job.tasks.coverLetterStatus }}</td>
+      <td class="fa {{ $ctrl.job.tasks.coverLetterStatus }}"></td>
     </tr>
     <tr>
       <th>Interview</th>
-      <td>{{ $ctrl.job.tasks.interview.status }}</td>
+      <td class="fa {{ $ctrl.job.tasks.interview.status }}">{{ $ctrl.job.tasks.interview.date }}</td>
     </tr>
   </table>
   <div class="pure-u-3-5">
@@ -18,8 +19,7 @@
     <h4>{{ $ctrl.job.company }}</h4>
     <p>{{ $ctrl.job.description }}</p>
     <br>
-    <h4 class="pure-u-3-5">Notes</h4>
-    <i class="fa fa-pencil" ng-click="$ctrl.toggleEditNotes()"></i>
+    <h4 class="pure-u-3-5 mc-width">Notes<i class="fa fa-pencil mc-right" ng-click="$ctrl.toggleEditNotes()"></i></h4>
     <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
     <div ng-if="$ctrl.showEditNotes">
       <textarea ng-model="$ctrl.newNotes" name="" id="" cols="60" rows="10"></textarea>
@@ -29,10 +29,18 @@
     <br>
     <div ng-if="$ctrl.glassdoor">
       <h4>
-        <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+        <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' /></a>
         Company Reviews
       </h4>
+      <h5>Name: <a href="{{ $ctrl.glassdoor.name }}">{{ $ctrl.glassdoor.name }}</a></h5>
+      <h5>Industry: {{ $ctrl.glassdoor.industry }}</h5>
+      <h5>{{ $ctrl.glassdoor.featuredReview.jobTitle }} <br> {{ $ctrl.glassdoor.featuredReview.headline }}</h5>
+      <p>{{ $ctrl.glassdoor.featuredReview.location}}</p>
+      <br>
+      <p>Pros: {{ $ctrl.glassdoor.featuredReview.pros }}</p>
+      <p>Cons: {{ $ctrl.glassdoor.featuredReview.cons }}</p>
       <p>{{ $ctrl.glassdoor }}</p>
     </div>
   </div>
+</div>
 </div>

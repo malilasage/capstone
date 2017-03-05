@@ -22,6 +22,7 @@
     vm.toggleModal = toggleModal;
     vm.createJob = createJob;
     vm.popUpOpen = popUpOpen;
+    vm.toggleDropdown = toggleDropdown;
 
     function onInit() {
 
@@ -43,6 +44,10 @@
       // console.log(id);
       // console.log();
       vm.popUp = !vm.popUp;
+    }
+
+    function toggleDropdown() {
+      vm.caret = !vm.caret;
     }
 
   }

@@ -44,7 +44,7 @@
             return null;
           }
           else {
-            return data.data.response.employers[0];;
+            return data.data.response.employers[0];
           }
         })
       }

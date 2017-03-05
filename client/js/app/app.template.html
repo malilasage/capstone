@@ -5,22 +5,34 @@
       <a ui-sref="dashboard" class="pure-menu-item pure-menu-link"><li>Dashboard</li></a>
       <a ui-sref="jobList" class="pure-menu-item pure-menu-link"><li>Jobs</li></a>
       <a ui-sref="search" class="pure-menu-item pure-menu-link"><li>Search</li></a>
-      <a ui-sref="profile" class="pure-menu-item pure-menu-link"><li>Profile</li></a>
+      <div class="mc-right">
+        <a class="pure-menu-item pure-menu-link"><li>Log In/Log Out</li></a>
+        <a ui-sref="profile" class="pure-menu-item pure-menu-link"><li>Profile</li></a>
+      </div>
     </ul>
   </nav>
 </div>
 
-<main class="pure-g">
+<main>
   <ui-view></ui-view>
 </main>
 
 <div class="pure-menu pure-menu-horizontal mc-nav footer">
   <footer>
     <ul class="pure-menu-list">
-      <a ui-sref="about" class="pure-menu-item pure-menu-link"><li>About</li></a>
-      <li>
-        <a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+      <li class="pure-menu-item">
+        <a ui-sref="about" class="pure-menu-link">About</a>
       </li>
+      <div class="mc-right">
+        <li class="pure-menu-item">
+          <a href='https://www.glassdoor.com/index.htm' target="_blank">powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search'/></a>
+        </li>
+        <li class="pure-menu-item">
+          <a title="Job Search" target="_blank" href="https://www.indeed.com">powered by
+            <img alt="Indeed" src="https://www.featuredcustomers.com/media/Company.logo/xsiHAgIXLJSnig8ngWIhmA-indeed.png" id="indeed">
+          </a>
+        </li>
+      </div>
     </ul>
   </footer>
 </div>

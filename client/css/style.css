@@ -1,30 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  /*height: 100%;*/
+}
+
 [ng-click] {
   cursor: pointer;
 }
 
+.mc-height {
+  /*height: 100%;*/
+}
+
+.page {
+  /*height: 100%;*/
+}
+
 .footer {
-  position: fixed;
-  bottom: 0px;
+  position: relative;
+  bottom: 0;
+  min-height: 70px;
+  height: 10%;
+}
+
+.footer li {
+  margin: 20px
+}
+
+.footer .mc-right {
+  margin-right: 0;
+}
+
+nav ul, footer ul{
+  width: 100%;
+}
+
+.mc-width {
+  width: 100%;
+}
+
+.mc-right {
+  float: right;
+  margin-right: 5%;
+  position: relative;
+  right: 3em;
+}
+
+.mc-left {
+  float: left;
+  position: absolute;
+  left: 0;
 }
 
 .mc-nav {
   background-color: #d3d3d3;
 }
 
-
-
 .mc-t-center {
   text-align: center;
 }
 
-.mc-center{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%;
-  height: 50%;
-}
+/*.mc-center{*/
+  /*position: absolute;*/
+  /*left: 50%;*/
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  /*width: 75%;*/
+  /*height: 50%;*/
+/*}*/
 
 /*--------- dropdown ---------*/
 
@@ -131,4 +176,9 @@
   display: inline-block;
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
+}
+
+
+#indeed {
+  height: 20px;
 }

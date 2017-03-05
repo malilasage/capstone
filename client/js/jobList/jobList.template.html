@@ -1,28 +1,32 @@
 <div class="pure-u-1 mc-center">
-  <h4>My Jobs</h4>
-  <div class="pure-menu pure-menu-horizontal">
-    <ul>
-      <li class="pure-menu-item">
-          <input type="search" placeholder="Filter" ng-model="search">
-      </li>
-      <li class="pure-menu-item">
-        <div class="dropdown" ng-init="sort='title'; sortName='Job Title'">
-        <button class="dropbtn">Sort By {{ sortName }}</button>
-          <div class="dropdown-content">
-            <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
-            <a ng-click="sort='company'; sortName='Company'">Company</a>
-            <a>Recently Submitted</a>
-            <!-- Status, Progress, Upcoming interview -->
+  <h4 class="mc-t-center">My Jobs</h4>
+  <div class="pure-menu pure-menu-horizontal pure-u-1 mc-width">
+    <ul class="mc-width">
+      <div class="mc-left">
+        <li class="pure-menu-item">
+            <input type="search" placeholder="Filter" ng-model="search">
+        </li>
+        <li class="pure-menu-item"  ng-mouseenter="$ctrl.toggleDropdown()" ng-mouseleave="$ctrl.toggleDropdown()">
+          <div class="dropdown" ng-init="sort='title'; sortName='Job Title'">
+          <button class="dropbtn">Sort By {{ sortName }} <i ng-if="$ctrl.caret" class="fa fa-caret-down"></i> <i ng-if="!$ctrl.caret" class="fa fa-caret-right"></i></button>
+            <div class="dropdown-content">
+              <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
+              <a ng-click="sort='company'; sortName='Company'">Company</a>
+              <a>Recently Submitted</a>
+              <!-- Status, Progress, Upcoming interview -->
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
-        <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
-      </li>
+        </li>
+      </div>
+      <div class="mc-right">
+        <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
+          <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
+        </li>
+      </div>
     </ul>
   </div>
 
-  <table class="pure-table pure-table-horizontal">
+  <table class="pure-table pure-table-horizontal mc-width">
     <thead>
       <tr>
         <th>Job</th>
