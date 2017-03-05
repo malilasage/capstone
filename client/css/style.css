@@ -2,8 +2,13 @@
   box-sizing: border-box;
 }
 
-html, body {
+html, body, main {
   /*height: 100%;*/
+
+}
+
+h2 {
+  font-family: 'Roboto';
 }
 
 [ng-click] {
@@ -55,11 +60,35 @@ nav ul, footer ul{
 }
 
 .mc-nav {
-  background-color: #d3d3d3;
+  background-color: #333230;
+}
+
+.mc-nav a {
+  color: #f9f9ea;
+  font-family: 'Roboto', light;
+  /*font-weight: 100;*/
+}
+
+.mc-nav a.pure-menu-item:hover {
+  color: #DB604E;
+  background-color: transparent;
+  text-shadow: 2px 2px 2px #262523;
 }
 
 .mc-t-center {
   text-align: center;
+}
+
+.fa {
+  color: #333230;
+}
+
+.fa-caret-right, .fa-caret-down {
+  color: white;
+}
+
+.fa-plus-circle:hover {
+  color: #D6454A;
 }
 
 /*.mc-center{
@@ -75,9 +104,8 @@ nav ul, footer ul{
 
 /* Style The Dropdown Button */
 .dropbtn {
-    background-color: #d3d3d3;
+    background-color: #333230;
     color: white;
-    /*padding: 16px;*/
     font-size: 16px;
     border: none;
     cursor: pointer;

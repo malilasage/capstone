@@ -21,7 +21,6 @@
     vm.$onInit = onInit;
     vm.toggleModal = toggleModal;
     vm.createJob = createJob;
-    vm.popUpOpen = popUpOpen;
     vm.toggleDropdown = toggleDropdown;
     vm.togglePopup = togglePopup;
 
@@ -37,14 +36,6 @@
       var userId = "58b0ab4eff75c44a8ca38abc";
       $jobService.postJob(vm.newJob, userId);
       toggleModal();
-    }
-
-    function popUpOpen(id) {
-      console.log(id);
-      //is showing on all elements. make func(job.resumeStatus || job.clStatus) n try that?
-      // console.log(id);
-      // console.log();
-      vm.popUp = !vm.popUp;
     }
 
     function togglePopup() {
