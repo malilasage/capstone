@@ -5,11 +5,11 @@
    return {
       // restrict: 'C',
       scope: {
-        show: '=',
+        // show: '=',
         jobData: '='
       },
       // replace: true,
-      transclude: true,
+      // transclude: true,
             // link: function(scope, element, attrs){
             //     var template, $element, loader;
 
@@ -49,25 +49,30 @@
 
             // }
       link: function(scope, element, attrs) {
-        scope.dialogStyle = {};
-        if (attrs.width)
-          scope.dialogStyle.width = attrs.width;
-        if (attrs.height)
-          scope.dialogStyle.height = attrs.height;
-        scope.hideModal = function() {
-          scope.show = false;
-        };
+        // scope.dialogStyle = {};
+        // if (attrs.width)
+        //   scope.dialogStyle.width = attrs.width;
+        // if (attrs.height)
+        //   scope.dialogStyle.height = attrs.height;
+        // scope.hideModal = function() {
+        //   scope.show = false;
+        // };
         // console.log(scope.jobData);
         // console.log(this.template);
         var $element = angular.element($compile(this.template)(scope));
         console.log($element);
-        element.on('click', function() {
+                  scope.close = function() {
+                    $element.sickk('hide');
+                };
+                element.show = false;
+        element.on('click', function(e) {
           console.log('clicked');
-          $element.show = true;
+          e.preventDefault();
+          // $element.sickk('show');
+          $element.show = false;
         })
       },
-      template:` <div class='ng-modal' ng-show="show">
-        <div class='ng-modal-overlay'></div>
+      template:` <div class='sickk hidden'>
         <div class='ng-modal-dialog' ng-style='dialogStyle'>
         cool {{ jobData }}
           <div class='ng-modal-close'>X</div>
