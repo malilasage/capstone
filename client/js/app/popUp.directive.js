@@ -61,15 +61,17 @@
         // console.log(this.template);
         var $element = angular.element($compile(this.template)(scope));
         console.log($element);
-                  scope.close = function() {
-                    $element.sickk('hide');
-                };
-                element.show = false;
+                //   scope.close = function() {
+                //     $element.sickk('hide');
+                // };
+                // element.show = false;
         element.on('click', function(e) {
           console.log('clicked');
           e.preventDefault();
           // $element.sickk('show');
-          $element.show = false;
+          console.log($element);
+          $element.removeClass('hidden');
+          console.log($element);
         })
       },
       template:` <div class='sickk hidden'>
