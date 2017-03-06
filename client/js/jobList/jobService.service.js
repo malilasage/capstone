@@ -26,6 +26,7 @@
       this.postJob = function postJob(job, userId) {
         $http.post(`/jobs/${userId}`, job).then((data, err) => {
           if(err) { throw err; }
+          console.log(data);
           return data.data;
         })
       }

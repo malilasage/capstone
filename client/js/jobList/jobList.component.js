@@ -35,6 +35,8 @@
     function createJob() {
       var userId = "58b0ab4eff75c44a8ca38abc";
       $jobService.postJob(vm.newJob, userId);
+      vm.jobs.push(vm.newJob);
+      vm.newJob = {};
       toggleModal();
     }
 
