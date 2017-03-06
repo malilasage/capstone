@@ -43,11 +43,7 @@
           <td>{{job.company}}</td>
           <td>
             <i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
-          <!-- <td ng-click="$ctrl.togglePopup()">
-            <popup show="$ctrl.showPopup" width='750px' height='60%' job-data="job"></popup>
-            <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td> -->
           <td popup job-data="job">
-            <!-- <popup width='750px' height='60%' job-data="job"></popup> -->
             <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
           <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
         </tr>

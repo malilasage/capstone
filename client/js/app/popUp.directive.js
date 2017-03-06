@@ -8,7 +8,7 @@
         show: '=',
         jobData: '='
       },
-      replace: true,
+      // replace: true,
       transclude: true,
             // link: function(scope, element, attrs){
             //     var template, $element, loader;
@@ -66,7 +66,7 @@
           $element.show = true;
         })
       },
-      template:` <div class='ng-modal' ng-show='show'>
+      template:` <div class='ng-modal' ng-show="show">
         <div class='ng-modal-overlay'></div>
         <div class='ng-modal-dialog' ng-style='dialogStyle'>
         cool {{ jobData }}
