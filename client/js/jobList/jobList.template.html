@@ -61,17 +61,17 @@
         <div class='ng-modal-close' ng-click='$ctrl.toggleModal()'>X</div>
         <div class='ng-modal-dialog-content'>
           <div>
-            <form class="pure-form">
+            <!-- <form class="pure-form">
               <fieldset>
                 <legend>Enter URL Here:</legend>
                 <input type="url" placeholder="Enter Job Listing URL">
                 <button class="pure-button">Get Data</button>
               </fieldset>
             </form>
-            <p>or</p>
-            <form class="pure-form" novalidate ng-submit="$ctrl.createJob()" name="form">
+            <p>or</p> -->
+            <form class="pure-form pure-form-stacked" novalidate ng-submit="$ctrl.createJob()" name="form">
               <fieldset>
-                <legend>Enter Job Information Yourself</legend>
+                <legend>Enter Job Information</legend> 
                 <div class="pure-control-group" ng-class="{error: form.title.$invalid }">
                   <label>Job Title</label>
                   <input name="title" ng-model="$ctrl.newJob.title" required>

@@ -16,6 +16,15 @@ h2 {
   font-family: 'Roboto';
 }
 
+h4 {
+  font-family: 'Roboto';
+  /*font-weight: bold;*/
+}
+
+label, p, legend, td {
+  font-family: 'Open Sans';
+}
+
 [ng-click] {
   cursor: pointer;
 }

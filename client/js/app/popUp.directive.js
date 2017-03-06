@@ -23,7 +23,7 @@
       },
       template:` <div class='ng-modal' ng-show='show'>
         <div class='ng-modal-overlay' ng-click='$ctrl.hideModal()'></div>
-        <div class='ng-modal-dialog' ng-style='dialogStyle' job-data="jobData">
+        <div class='ng-modal-dialog' ng-style='dialogStyle'>
         cool {{ jobData }}
           <div class='ng-modal-close' ng-click='$ctrl.hideModal()'>X</div>
           <div class='ng-modal-dialog-content' ng-transclude></div>

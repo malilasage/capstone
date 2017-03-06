@@ -1,6 +1,11 @@
 <h4>search results</h4>
 <div>
   <div ng-repeat="result in $ctrl.searchResults">
-    <p>{{ result }}</p>
+    <h4>{{ result.jobtitle }}</h4>
+    <p>{{ result.company }} {{ result.formattedLocation }} | Posted at: {{ result.date }}</p>
+    <br>
+    <p>{{ result.snippet }}</p>
+    <button class="pure-button" ng-click="$ctrl.addJob(result.url)">Add to Hunt</button>
+    <a href="{{ result.url }}" target="_blank"><button class="pure-button">Open in Indeed.com</button></a>
   </div>
 </div>
