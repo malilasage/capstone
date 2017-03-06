@@ -43,8 +43,11 @@
           <td>{{job.company}}</td>
           <td>
             <i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
-          <td ng-click="$ctrl.togglePopup()">
+          <!-- <td ng-click="$ctrl.togglePopup()">
             <popup show="$ctrl.showPopup" width='750px' height='60%' job-data="job"></popup>
+            <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td> -->
+          <td popup job-data="job">
+            <!-- <popup width='750px' height='60%' job-data="job"></popup> -->
             <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
           <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
         </tr>
@@ -71,7 +74,7 @@
             <p>or</p> -->
             <form class="pure-form pure-form-stacked" novalidate ng-submit="$ctrl.createJob()" name="form">
               <fieldset>
-                <legend>Enter Job Information</legend> 
+                <legend>Enter Job Information</legend>
                 <div class="pure-control-group" ng-class="{error: form.title.$invalid }">
                   <label>Job Title</label>
                   <input name="title" ng-model="$ctrl.newJob.title" required>
