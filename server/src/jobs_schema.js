@@ -11,6 +11,12 @@ const JobsSchema = new Schema({
   company: {
     type: String, default: null
   },
+  url: {
+    type: String, default: null
+  },
+  location: {
+    type: String, default: null
+  },
   notes: {
     type: String, default: null
   },

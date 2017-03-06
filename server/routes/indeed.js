@@ -24,8 +24,32 @@ router.get('/new', (req, res) => {
   // return request(req.params.url).pipe(res);
   // let $ = cheerio.load(req.params.url);
   return request(req.query.url, (err, response, html) => {
-    let $ = cheerio.load(html);
-    res.send('cool');
+    var $ = cheerio.load(html);
+    var description = $('#job_summary').text();
+    var title = $('.jobtitle').text();
+    var company = $('.company').text();
+    var location = $('.location').text();
+
+    User.findById(req.params.userid, (err, data) => {
+      if(err) throw err;
+      if(!req.body.title) { res.send(400) }
+      else {
+        var { title, description, company, notes, url, location } = req.body;
+        data.jobs.push({
+          title,
+          description,
+          company,
+          notes,
+          url,
+          location
+        });
+        data.save((err, data) => {
+            if (err) throw err;
+            var index = data.jobs.length - 1;
+            res.send(data.jobs[index]);
+          })
+        }
+    })
   })
 })
 

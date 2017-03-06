@@ -33,12 +33,14 @@ router.post('/:userid', (req, res) => {
     if(err) throw err;
     if(!req.body.title) { res.send(400) }
     else {
-      var { title, description, company, notes } = req.body;
+      var { title, description, company, notes, url, location } = req.body;
       data.jobs.push({
         title,
         description,
         company,
-        notes
+        notes,
+        url,
+        location
       });
       data.save((err, data) => {
           if (err) throw err;
