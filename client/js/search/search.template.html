@@ -1,12 +1,14 @@
-<div class="pure-u-1 mc-center">
-  <h4>Search</h4>
-  <form action="" class="pure-form">
-    <fieldset>
-      <input type="jobName" placeholder="Job Title" ng-model="$ctrl.search.job">
-      <input type="location" placeholder="Location" ng-model="$ctrl.search.location">
+<div class="pure-u-g">
+  <div class="pure-u-4-5 mc-content">
+    <h2 class="header mc-t-center">Search For Job Listings</h2>
+    <form action="" class="pure-form mc-t-center">
+      <fieldset>
+        <input type="jobName" placeholder="Job Title" ng-model="$ctrl.search.job" required>
+        <input type="location" placeholder="Location" ng-model="$ctrl.search.location" required>
 
-      <button type="submit" class="pure-button pure-button-primary" ng-click="$ctrl.submitSearch($ctrl.search)">Submit</button>
-    </fieldset>
-  </form>
-  <ui-view></ui-view>
+        <button type="submit" class="pure-button" ng-click="$ctrl.submitSearch($ctrl.search)">Search</button>
+      </fieldset>
+    </form>
+    <ui-view></ui-view>
+  </div>
 </div>

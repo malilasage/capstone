@@ -18,8 +18,6 @@
     }
 
     function submitSearch(search) {
-      console.log('cool');
-      console.log(search);
       $state.go('searchResults', {'job': search.job, 'location': search.location});
     }
   }

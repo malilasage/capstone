@@ -1,90 +1,94 @@
-<div class="pure-u-4-5 mc-content">
-  <h2 class="mc-t-center">My Jobs</h2>
-  <div class="pure-menu pure-menu-horizontal pure-u-1 mc-width">
-    <ul class="mc-width">
-      <div class="mc-left">
-        <li class="pure-menu-item">
-            <input type="search" placeholder="Filter" ng-model="search">
-        </li>
-        <li class="pure-menu-item"  ng-mouseenter="$ctrl.toggleDropdown()" ng-mouseleave="$ctrl.toggleDropdown()">
-          <div class="dropdown" ng-init="sort='title'; sortName='Job Title'">
-          <button class="dropbtn">Sort By {{ sortName }} <i ng-if="$ctrl.caret" class="fa fa-caret-down"></i> <i ng-if="!$ctrl.caret" class="fa fa-caret-right"></i></button>
-            <div class="dropdown-content">
-              <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
-              <a ng-click="sort='company'; sortName='Company'">Company</a>
-              <a>Recently Submitted</a>
-              <!-- Status, Progress, Upcoming interview -->
+<div class="pure-u-g">
+  <div class="pure-u-4-5 mc-content">
+    <h2 class="mc-t-center header">My Jobs</h2>
+    <div class="pure-menu pure-menu-horizontal mc-width">
+      <ul class="mc-width">
+        <div>
+          <li class="pure-menu-item">
+              <input type="search" placeholder="Filter" ng-model="search">
+          </li>
+          <li class="pure-menu-item"  ng-mouseenter="$ctrl.toggleDropdown()" ng-mouseleave="$ctrl.toggleDropdown()">
+            <div class="dropdown" ng-init="sort='title'; sortName='Job Title'">
+            <button class="dropbtn">Sort By {{ sortName }} <i ng-if="$ctrl.caret" class="fa fa-caret-down"></i> <i ng-if="!$ctrl.caret" class="fa fa-caret-right"></i></button>
+              <div class="dropdown-content">
+                <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
+                <a ng-click="sort='company'; sortName='Company'">Company</a>
+                <a>Recently Submitted</a>
+                <!-- Status, Progress, Upcoming interview -->
+              </div>
             </div>
-          </div>
-        </li>
-      </div>
-      <div class="mc-right">
-        <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
-          <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
-        </li>
-      </div>
-    </ul>
-  </div>
+          </li>
+        </div>
+        <div class="mc-right">
+          <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
+            <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
+          </li>
+        </div>
+      </ul>
+    </div>
 
-  <table class="pure-table pure-table-horizontal mc-width">
-    <thead>
-      <tr>
-        <th>Job</th>
-        <th>Company</th>
-        <th>Resume</th>
-        <th>Cover Letter</th>
-        <th>Interview</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="job in $ctrl.jobs | filter:search | orderBy:sort">
-        <td><a ui-sref="jobView({company: job.company, jobId: job._id})">{{ job.title }}</a></td>
-        <td>{{job.company}}</td>
-        <td>
-          <i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
-        <td ng-click="$ctrl.togglePopup()">
-          <popup show="$ctrl.showPopup" width='750px' height='60%' job-data="job"></popup>
-          <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
-        <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="pure-table pure-table-horizontal mc-width">
+      <thead>
+        <tr>
+          <th>Job</th>
+          <th>Company</th>
+          <th>Resume</th>
+          <th>Cover Letter</th>
+          <th>Interview</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="job in $ctrl.jobs | filter:search | orderBy:sort">
+          <td><a ui-sref="jobView({company: job.company, jobId: job._id})">{{ job.title }}</a></td>
+          <td>{{job.company}}</td>
+          <td>
+            <i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
+          <td ng-click="$ctrl.togglePopup()">
+            <popup show="$ctrl.showPopup" width='750px' height='60%' job-data="job"></popup>
+            <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
+          <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <div ng-if="$ctrl.openModal" id="modal">
   <div class='ng-modal-overlay' ng-click='$ctrl.toggleModal()'></div>
-    <div class='ng-modal-dialog pure-u-1'>
-      <h4>Add New Job</h4>
-      <div class='ng-modal-close' ng-click='$ctrl.toggleModal()'>X</div>
-      <div class='ng-modal-dialog-content'>
-        <div>
-          <form class="pure-form">
-            <fieldset>
-              <legend>Enter URL Here:</legend>
-              <input type="url" placeholder="Enter Job Listing URL">
-              <button class="pure-button">Get Data</button>
-            </fieldset>
-          </form>
-          <p>or</p>
-          <form class="pure-form" novalidate ng-submit="$ctrl.createJob()" name="form">
-            <fieldset>
-              <legend>Enter Job Information Yourself</legend>
-              <div class="pure-control-group" ng-class="{error: form.title.$invalid }">
-                <label>Job Title</label>
-                <input name="title" ng-model="$ctrl.newJob.title" required>
-              </div>
-              <div class="pure-control-group" ng-class="{error: form.company.$invalid }">
-                <label>Company</label>
-                <input name="company" ng-model="$ctrl.newJob.company" required>
-              </div>
-              <div class="pure-control-group" ng-class="{error: form.description.$invalid }">
-                <label>Job Description</label>
-                <textarea name="description" ng-model="$ctrl.newJob.description" cols="30" rows="10" required></textarea>
-              </div>
-              <button type="submit" class="pure-button" ng-disabled="form.$invalid">Submit</button>
-            </fieldset>
-          </form>
-        </div>
+    <div class='ng-modal-dialog pure-u-g'>
+      <div class="mc-content pure-u-4-5">
+        <h4>Add New Job</h4>
+        <div class='ng-modal-close' ng-click='$ctrl.toggleModal()'>X</div>
+        <div class='ng-modal-dialog-content'>
+          <div>
+            <form class="pure-form">
+              <fieldset>
+                <legend>Enter URL Here:</legend>
+                <input type="url" placeholder="Enter Job Listing URL">
+                <button class="pure-button">Get Data</button>
+              </fieldset>
+            </form>
+            <p>or</p>
+            <form class="pure-form" novalidate ng-submit="$ctrl.createJob()" name="form">
+              <fieldset>
+                <legend>Enter Job Information Yourself</legend>
+                <div class="pure-control-group" ng-class="{error: form.title.$invalid }">
+                  <label>Job Title</label>
+                  <input name="title" ng-model="$ctrl.newJob.title" required>
+                </div>
+                <div class="pure-control-group" ng-class="{error: form.company.$invalid }">
+                  <label>Company</label>
+                  <input name="company" ng-model="$ctrl.newJob.company" required>
+                </div>
+                <div class="pure-control-group" ng-class="{error: form.description.$invalid }">
+                  <label>Job Description</label>
+                  <textarea name="description" ng-model="$ctrl.newJob.description" cols="30" rows="10" required></textarea>
+                </div>
+                <button type="submit" class="pure-button" ng-disabled="form.$invalid">Submit</button>
+              </fieldset>
+            </form>
+          </div>
       </div>
     </div>
+  </div>
 </div>

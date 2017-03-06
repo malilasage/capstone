@@ -22,7 +22,25 @@ h2 {
 
 .mc-content {
   height: 100%;
+  /*text-align: center;*/
+  margin: 20px auto;
+  display: block;
+/*width: 50%;*/
+}
 
+.pure-button {
+  background-color: #333230;
+  color: white;
+}
+
+.header {
+  margin: 50px auto 70px auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
 }
 
 .page {
@@ -88,6 +106,7 @@ nav ul, footer ul{
 .pure-table thead {
   background-color: #333230;
   color: #f9f9ea;
+  /*border-color: blue;*/
 }
 
 /*------- icons --------*/
