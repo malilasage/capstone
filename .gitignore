@@ -1,3 +1,5 @@
 node_modules
+gulpfile.js
+bin/www
 .DS_Store
 .env
