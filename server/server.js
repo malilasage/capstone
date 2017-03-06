@@ -1,9 +1,10 @@
 //database
 const mongoose = require('mongoose');
+require('dotenv').load();
 
 mongoose.Promise = require('bluebird');
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone');
+console.log(process.env);
+mongoose.connect(process.env.MONGODLAB_URI);
 
 mongoose.connection.on('error', () => {
   console.log('mongo connection failed')})
@@ -11,7 +12,7 @@ mongoose.connection.on('error', () => {
 
 //server
 const request = require('request');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
