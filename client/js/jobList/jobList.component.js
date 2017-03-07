@@ -22,8 +22,6 @@
     vm.toggleModal = toggleModal;
     vm.createJob = createJob;
     vm.toggleDropdown = toggleDropdown;
-    vm.togglePopup = togglePopup;
-    vm.showMe = {};
 
     function onInit() {
 
@@ -39,12 +37,6 @@
       vm.jobs.push(vm.newJob);
       vm.newJob = {};
       toggleModal();
-    }
-
-    function togglePopup(id) {
-      console.log(id);
-      console.log('click');
-      // vm.showMe.id = !vm.showMe.id;
     }
 
     function toggleDropdown() {
