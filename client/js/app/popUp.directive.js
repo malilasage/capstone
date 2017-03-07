@@ -70,16 +70,13 @@
           e.preventDefault();
           // $element.sickk('show');
           console.log($element);
-          $element.removeClass('hidden');
+          $element.addClass('hidden');
           console.log($element);
         })
       },
-      template:` <div class='sickk hidden'>
-        <div class='ng-modal-dialog' ng-style='dialogStyle'>
-        cool {{ jobData }}
-          <div class='ng-modal-close'>X</div>
-          <div class='ng-modal-dialog-content'>{{ jobData }}</div>
-        </div></div>`
+      template:` <div class='sickk'>
+          <div>{{ jobData }}</div>
+        </div>`
     };
   }])
 }())

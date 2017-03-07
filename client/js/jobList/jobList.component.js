@@ -41,7 +41,6 @@
     }
 
     function togglePopup() {
-      // console.log(vm.jobData);
       console.log('click');
       vm.showPopup = !vm.showPopup;
     }
