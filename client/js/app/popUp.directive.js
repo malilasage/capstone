@@ -74,7 +74,7 @@
           console.log($element);
         })
       },
-      template:` <div class='sickk'>
+      template:`<div class='sickk'>
           <div>{{ jobData }}</div>
         </div>`
     };
