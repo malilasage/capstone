@@ -34,7 +34,7 @@
     }
 
     function addJob(url) {
-      var userId = "58bdff1f25bb5530295c308b";
+      var userId = "58b0ab4eff75c44a8ca38abc";
       return $http({
         method: 'GET',
         url: `/indeed/new/${userId}`,
