@@ -32,10 +32,9 @@
       }
 
       this.updateJobTasks = function(jobId, userId, task) {
-        console.log(task);
         $http.patch(`/jobs/${userId}/${jobId}`, task).then((data, err) => {
           if(err) {throw err}
-          console.log(data);
+          return data.data;
         })
       }
 

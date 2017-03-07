@@ -54,7 +54,7 @@
       var newTask = { tasks:{}};
       newTask.tasks[type] = task;
       $jobService.updateJobTasks(job._id, userId, newTask);
-      job.tasks.coverLetterStatus = task;
+      job.tasks[type] = task;
     }
   }
 }());
