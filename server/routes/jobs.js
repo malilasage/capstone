@@ -58,9 +58,15 @@ router.patch('/:userid/:id', (req, res) => {
       if(err) { throw err; }
       if(data === null) { res.send(404) }
       updateData(data.jobs[0], req.body, (set) => {
-        User.update({'_id': req.params.userid, 'jobs._id': req.params.id}, {$set: {'jobs.$': set}}, (err, savedData) => {
+        User.update({'_id': req.params.userid, 'jobs._id': req.params.id}, {$set: {'jobs.$': set}}, (err, nSaved) => {
           if(err) { throw err; }
-          res.send(savedData);
+          // res.send(nSaved);
+          User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
+            function(err, data){
+              if(err) { throw err; }
+              if(data === null) { res.send(404) }
+              res.send(data.jobs[0]);
+            })
         })
       });
     });
@@ -76,6 +82,12 @@ router.patch('/:userid/:id', (req, res) => {
     }
     if(body.notes !== undefined) {
       data.notes = body.notes;
+    }
+    if(body.location !== undefined) {
+      data.location = body.location;
+    }
+    if(body.url !== undefined) {
+      data.url = body.url;
     }
     if(body.tasks !== undefined) {
       if(body.tasks.coverLetterStatus !== undefined) {
