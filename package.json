@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server"
+    "start": "node server/server",
+    "heroku-postbuild": "mongoimport --db heroku_shc3qggc --collection users --drop --file server/seeds/seed-data.json"
   },
   "repository": {
     "type": "git",
