@@ -191,6 +191,30 @@ nav ul, footer ul{
 /*-------- pop up ----------*/
 
 
+.popup {
+    width: 120px;
+    background-color: black;
+    opacity: 0.8;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    /*bottom: 51%;*/
+    /*top: 100px;*/
+    /*margin-bottom: 75px;*/
+    margin-left: -50px;
+    z-index: 1;
+}
+
+.popup-icons {
+  display: inline;
+}
+
+.popup-icons .fa{
+  color: white;
+}
+
+
 /*--------- modal ---------*/
 
 

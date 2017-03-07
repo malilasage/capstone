@@ -7,9 +7,11 @@
   "jobs": [
     {
         "_id": ObjectId("58b0ab4eff75c44a8ca38abd"),
-        "company": "IBM",
+        "company": "Randstad Technologies",
+        "location": "Denver, CO",
+        "url": "http://job-openings.monster.com/v2/job/View?JobID=181283303&MESCOID=1500127001001&jobPosition=2",
         "createdAt": "2017-02-24T22:05:11.643Z",
-        "description": "Woke mlkshk wolf gentrify jianbing, swag leggings 90's PBR&B raw denim photo booth. Meggings keffiyeh locavore, four loko drinking vinegar intelligentsia banjo farm-to-table asymmetrical. Church-key chartreuse gastropub, occupy skateboard vice flannel pok pok pabst listicle paleo bushwick snackwave craft beer. Twee squid jianbing swag hexagon, sustainable dreamcatcher normcore. Ugh banh mi enamel pin af narwhal. Vinyl bespoke kogi, crucifix four loko semiotics affogato helvetica scenester vape kickstarter cronut yuccie ennui. Lo-fi bespoke meditation tofu celiac art party.",
+        "description": "<p>This role will be responsible for front end web page development and working with various content management systems (CMS) to create and deploy content for websites.</p><p><br /><br /></p><p><span>Responsibilities Include:</span></p><p><br /><br /><br /><span>&bull; Developing cross-browser and cross-platform compatible solutions using HTML/CSS/JavaScript</span><br /><span>&bull; Maintaining client portals in Alfresco content management system.</span><br /><span>&bull; Providing accurate timing estimates on front end website development efforts.</span><br /><span>&bull; Contributing to documentation</span><br /><span>&bull; Develop and test across multiple browsers, platforms, and devices, including smartphones and tablets.</span><br /><span>&bull; Backwards compatibility coding</span><br /><br /><br /></p><p><span>Knowledge &amp; Skills</span></p><p><br /><br /><br /><span>&bull; Working knowledge of JavaScript and the jQuery library</span><br /><span>&bull; knowledge of web and mobile UX/UI</span><br /><span>&bull; Ability to estimate effort based on high level requirements.</span><br /><span>&bull; Experience with Subversion or other version control system</span><br /><span>&bull; Experience integrating HTML/CSS with Java server-side code using Eclipse/MyEclipse</span><br /><span>&bull; 3 - 6 years of overall professional experience in designing and development of rich web based applications.</span><br /><span>&bull; Sound understanding of web analytics in relation to web design</span><br /><span>&bull; Understanding/familiarity with Web Accessibility / ADA</span><br /><span>&bull; Results oriented with strong customer focus and good communication skills.</span><br /><span>&bull; Demonstrated ability to exercise good judgment, prioritize multiple tasks, and problem solving under pressure of deadlines and resource constraints.</span><br /><span>&bull; Passion for work - willing to work extra hours if needed</span><br /><span>&bull; Must be very organized and able to work with other groups who are not.</span><br /><span>&bull; Familiarity with patternlab.io a big plus</span></p>",
         "notes": "Vinyl bespoke kogi, crucifix four loko semiotics affogato helvetica scenester vape kickstarter cronut yuccie ennui.",
         "tasks": {
             "coverLetterStatus": "fa-pencil",
@@ -20,7 +22,7 @@
             },
             "resumeStatus": "fa-pencil"
         },
-        "title": "Full Stack Dev"
+        "title": "Front End Web Developer"
     },
     {
         "_id": ObjectId("58b0ab4eff75c44a8ca38abe"),

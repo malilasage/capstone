@@ -16,6 +16,7 @@
       </tr>
     </table>
     <div>
+      <a href="{{ $ctrl.job.url }}"><button>Go To Original Listing</button></a>
       <button ng-click="$ctrl.deleteJob($ctrl.job)">Delete Job</button>
     </div>
   </div>
@@ -23,8 +24,15 @@
     <div class="header">
       <h2>{{ $ctrl.job.title }}</h2>
       <h4>{{ $ctrl.job.company }}</h4>
+      <h4>{{ $ctrl.job.location }}</h4>
+    </div>
+    <div>
+      <form action="/file-upload">
+        <input type="file">
+      </form>
     </div>
     <p>{{ $ctrl.job.description }}</p>
+    <!-- <p ng-bind-html="{{$ctrl.job.description}}"></p> -->
     <br>
     <h4 class="pure-u-3-5 mc-width">Notes<i class="fa fa-pencil mc-right" ng-click="$ctrl.toggleEditNotes()"></i></h4>
     <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
