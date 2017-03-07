@@ -57,15 +57,13 @@ router.patch('/:userid/:id', (req, res) => {
     function(err, data){
       if(err) { throw err; }
       if(data === null) { res.send(404) }
-      updateData(data.jobs[0], req.body, () => {
-        //arg data is removing all jobs besides updated one
-        User.update({'jobs._id': req.params.id}, data, (err, savedData) => {
+      updateData(data.jobs[0], req.body, (set) => {
+        User.update({'_id': req.params.userid, 'jobs._id': req.params.id}, {$set: {'jobs.$': set}}, (err, savedData) => {
           if(err) { throw err; }
-          res.send(savedData)
+          res.send(savedData);
         })
       });
     });
-
   function updateData(data, body, callback) {
     if(body.title !== undefined) {
       data.title = body.title;
@@ -98,7 +96,7 @@ router.patch('/:userid/:id', (req, res) => {
         }
       }
     }
-    return callback();
+    return callback(data);
   }
 })
 
