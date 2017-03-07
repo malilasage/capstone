@@ -30,7 +30,7 @@
     <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
     <div ng-if="$ctrl.showEditNotes">
       <textarea ng-model="$ctrl.newNotes" name="" id="" cols="60" rows="10"></textarea>
-      <button ng-click="$ctrl.submitNotes($ctrl.newNotes)">Save Notes</button>
+      <button ng-click="$ctrl.submitNotes($ctrl.newNotes, $ctrl.job)">Save Notes</button>
       <button ng-click="$ctrl.toggleEditNotes()">Cancel</button>
     </div>
     <br>

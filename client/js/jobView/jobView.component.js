@@ -30,14 +30,13 @@
       vm.showEditNotes = !vm.showEditNotes;
     }
 
-    function submitNotes(notes) {
-      toggleEditNotes();
-      // $http.patch('', notes).then((err, data) =>{
-      //   vm.job.notes = notes;
-      //   toggleEditNotes();
-      // })
+    function submitNotes(notes, job) {
+      var userId = "58b0ab4eff75c44a8ca38abc";
+      var newInfo = {};
+      newInfo.notes = notes;
+      $jobService.updateJobTasks(job._id, userId, newInfo);
       vm.job.notes = notes;
-      console.log(notes);
+      toggleEditNotes();
     }
 
     function deleteJob(job) {
