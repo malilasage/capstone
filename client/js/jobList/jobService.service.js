@@ -26,6 +26,13 @@
       this.postJob = function postJob(job, userId) {
         $http.post(`/jobs/${userId}`, job).then((data, err) => {
           if(err) { throw err; }
+          return data.data;
+        })
+      }
+
+      this.deleteJob = function deleteJob(userId, job) {
+        $http.delete(`/jobs/${userId}/${job._id}`).then((data, err) => {
+          if(err) {throw err}
           console.log(data);
           return data.data;
         })

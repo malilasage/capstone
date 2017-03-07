@@ -10,15 +10,16 @@
     }
   })
 
-  controller.$inject = ['$jobService', '$http'];
+  controller.$inject = ['$jobService', '$http', '$state'];
 
-  function controller($jobService, $http) {
+  function controller($jobService, $http, $state) {
 
     const vm = this;
 
     vm.$onInit = onInit;
     vm.toggleEditNotes = toggleEditNotes;
     vm.submitNotes = submitNotes;
+    vm.deleteJob = deleteJob;
 
     function onInit() {
 
@@ -37,6 +38,13 @@
       // })
       vm.job.notes = notes;
       console.log(notes);
+    }
+
+    function deleteJob(job) {
+      console.log(job);
+      var userId = "58b0ab4eff75c44a8ca38abc";
+      $jobService.deleteJob(userId, job);
+      $state.go('jobList');
     }
   }
 }());

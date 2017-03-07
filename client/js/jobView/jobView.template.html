@@ -1,19 +1,24 @@
 <div class="mc-height">
 <div class="pure-u-g mc-content">
-  <table class="pure-table pure-u-1-5">
-    <tr>
-      <th>Resume</th>
-      <td><i class="fa {{ $ctrl.job.tasks.resumeStatus }}"></i></td>
-    </tr>
-    <tr>
-      <th>Cover Letter</th>
-      <td class="fa {{ $ctrl.job.tasks.coverLetterStatus }}"></td>
-    </tr>
-    <tr>
-      <th>Interview</th>
-      <td class="fa {{ $ctrl.job.tasks.interview.status }}">{{ $ctrl.job.tasks.interview.date }}</td>
-    </tr>
-  </table>
+  <div class="pure-u-1-5">
+    <table class="pure-table">
+      <tr>
+        <th>Resume</th>
+        <td><i class="fa {{ $ctrl.job.tasks.resumeStatus }}"></i></td>
+      </tr>
+      <tr>
+        <th>Cover Letter</th>
+        <td class="fa {{ $ctrl.job.tasks.coverLetterStatus }}"></td>
+      </tr>
+      <tr>
+        <th>Interview</th>
+        <td class="fa {{ $ctrl.job.tasks.interview.status }}">{{ $ctrl.job.tasks.interview.date }}</td>
+      </tr>
+    </table>
+    <div>
+      <button ng-click="$ctrl.deleteJob($ctrl.job)">Delete Job</button>
+    </div>
+  </div>
   <div class="pure-u-3-5">
     <div class="header">
       <h2>{{ $ctrl.job.title }}</h2>
