@@ -4,7 +4,7 @@ require('dotenv').load();
 
 mongoose.Promise = require('bluebird');
 console.log(process.env);
-mongoose.connect(process.env.MONGODLAB_URI);
+mongoose.connect(process.env.MONGOLAB_URI);
 
 mongoose.connection.on('error', () => {
   console.log('mongo connection failed')})

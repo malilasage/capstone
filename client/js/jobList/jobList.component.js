@@ -33,7 +33,7 @@
     }
 
     function createJob() {
-      var userId = "58b0ab4eff75c44a8ca38abc";
+      var userId = "58bdff1f25bb5530295c308b";
       $jobService.postJob(vm.newJob, userId);
       vm.jobs.push(vm.newJob);
       vm.newJob = {};

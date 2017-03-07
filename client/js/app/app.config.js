@@ -27,11 +27,11 @@
         url: 'dashboard',
         resolve: {
           jobData: function($jobService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
+            var userId = "58bdff1f25bb5530295c308b";
             return $jobService.getJobs(userId);
           },
           user: function($userService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
+            var userId = "58bdff1f25bb5530295c308b";
             return $userService.getUser(userId);
           }
         }
@@ -43,7 +43,7 @@
         url: 'jobs',
         resolve: {
           jobs: function($jobService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
+            var userId = "58bdff1f25bb5530295c308b";
             return $jobService.getJobs(userId);
           }
         }
@@ -70,7 +70,7 @@
         url: 'profile',
         resolve: {
           user: function($userService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
+            var userId = "58bdff1f25bb5530295c308b";
             return $userService.getUser(userId);
           }
         }
