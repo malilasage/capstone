@@ -44,7 +44,11 @@
           <td>
             <i class="fa {{job.tasks.resumeStatus}} fa-lg" aria-hidden="true"></i></td>
           <td ng-click="showMe=!showMe">
-            <span ng-if="showMe">{{job.title}}</span>
+            <div ng-if="showMe" class="popup">
+              <div ng-repeat="task in $ctrl.taskIcons.write">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job)"></i>
+              </div>
+            </div>
             <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
           <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
         </tr>

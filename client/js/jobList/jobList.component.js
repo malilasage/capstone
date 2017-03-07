@@ -22,6 +22,12 @@
     vm.toggleModal = toggleModal;
     vm.createJob = createJob;
     vm.toggleDropdown = toggleDropdown;
+    vm.updateTask = updateTask;
+
+    vm.taskIcons = {
+      write: ["fa-minus", "fa-pencil", "fa-check"],
+      schedule: ["fa-minus", "fa-calendar-check-o", "fa-check"]
+    };
 
     function onInit() {
 
@@ -43,5 +49,9 @@
       vm.caret = !vm.caret;
     }
 
+    function updateTask(task, job) {
+      console.log(task, job.title);
+      job.tasks.coverLetterStatus = task;
+    }
   }
 }());
