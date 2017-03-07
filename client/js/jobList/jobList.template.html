@@ -46,7 +46,7 @@
           <td ng-click="showMe=!showMe">
             <div ng-if="showMe" class="popup">
               <div ng-repeat="task in $ctrl.taskIcons.write">
-                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job)"></i>
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job, 'coverLetterStatus')"></i>
               </div>
             </div>
             <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>

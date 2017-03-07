@@ -49,8 +49,11 @@
       vm.caret = !vm.caret;
     }
 
-    function updateTask(task, job) {
-      console.log(task, job.title);
+    function updateTask(task, job, type) {
+      var userId = "58b0ab4eff75c44a8ca38abc";
+      var newTask = { tasks:{}};
+      newTask.tasks[type] = task;
+      $jobService.updateJobTasks(job._id, userId, newTask);
       job.tasks.coverLetterStatus = task;
     }
   }
