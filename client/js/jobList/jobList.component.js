@@ -23,6 +23,7 @@
     vm.createJob = createJob;
     vm.toggleDropdown = toggleDropdown;
     vm.updateTask = updateTask;
+    vm.confetti = confetti;
 
     vm.taskIcons = {
       write: ["fa-minus", "fa-pencil", "fa-check"],
@@ -70,5 +71,9 @@
       }
       $jobService.updateJobTasks(job._id, userId, newTask);
     }
-  }
+
+    function confetti() {
+
+    }
+  // }
 }());
