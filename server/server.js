@@ -14,8 +14,11 @@ const request = require('request');
 const port = process.env.PORT;
 const express = require('express')
 const path = require('path')
-const bodyParser = require('body-parser')
-const server = express()
+const server = express();
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, './client')))
