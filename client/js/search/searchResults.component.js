@@ -43,7 +43,7 @@
         }
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         // $state.go('jobList');
         return res;
       })

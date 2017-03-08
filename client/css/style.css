@@ -156,6 +156,15 @@ nav ul, footer ul{
   height: 50%;
 }*/
 
+/*----- search -------*/
+.search-result {
+  margin-bottom: 80px;
+}
+
+.search-form {
+  margin-bottom: 60px;
+}
+
 /*--------- dropdown ---------*/
 
 /* Style The Dropdown Button */
