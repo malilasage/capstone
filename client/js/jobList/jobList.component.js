@@ -29,6 +29,12 @@
       schedule: ["fa-minus", "fa-calendar-check-o", "fa-check"]
     };
 
+    // $scope.$watch(function(){
+    //   return $jobService.postJob()
+    // }, function(newVal, oldVal) {
+    //   vm.jobs.push(newVal);
+    // });
+
     function onInit() {
 
     }
@@ -39,10 +45,11 @@
 
     function createJob() {
       var userId = "58b0ab4eff75c44a8ca38abc";
-      $jobService.postJob(vm.newJob, userId);
-      vm.jobs.push(vm.newJob);
-      vm.newJob = {};
-      toggleModal();
+      $jobService.postJob(vm.newJob, userId).then((data) => {
+        vm.jobs.push(data);
+        vm.newJob = {};
+        toggleModal();
+      });
     }
 
     function toggleDropdown() {

@@ -27,7 +27,7 @@ router.get('/job/:id', (req, res) => {
     })
 });
 
-//create new job
+//create a new job
 router.post('/:userid', (req, res) => {
   User.findById(req.params.userid, (err, data) => {
     if(err) throw err;
