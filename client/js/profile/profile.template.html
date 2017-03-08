@@ -1,19 +1,41 @@
 <div class="pure-u-g">
   <div class=" pure-u-3-5 mc-content">
-    <div>
-      <div class="header">
-        <h2>{{ $ctrl.user.firstName }} {{ $ctrl.user.lastName }}</h2>
-      </div>
-      <p>Email: lol</p>
-    </div>
+    <h4>Settings</h4>
     <br>
     <div>
-      <h4>My Goals</h4>
+      <h4>Goals</h4>
+      <p>Set a new goal for yourself. Ex: I want to apply to 5 jobs this week, I want to write 8 cover letters this month.</p>
+      <form action="" class="pure-form">
+        <label for="">I want to</label>
+        <select name="job-action">
+          <option value="apply-to">Apply To</option>
+          <option value="write">Write</option>
+          <option value="schedule">Schedule</option>
+          <option value="finish">Finish</option>
+        </select>
+        <input type="number" name="quantity" min="1" max="50" placeholder="1">
+        <select name="task-type">
+          <option value="jobs">Jobs</option>
+          <option value="cover-letters">Cover Letters</option>
+          <option value="interviews">Interviews</option>
+        </select>
+        <button class="pure-button button-small">Set Goal</button>
+      </form>
     </div>
     <br>
     <div>
       <h4>Customize Job List</h4>
-      <p>Want to remember to send thank you notes after your interview? Add a column...</p>
+      <p>Want to remember to send thank you notes after your interview? Customize your task list... </p>
+      <form action="" class="pure-form">
+        <label for="">Add a Column</label>
+        <select name="columns">
+          <option value="thank-you">Thank You Notes</option>
+          <option value="tech-interview">Tech Interviews</option>
+          <option value="deadline">Application Deadline</option>
+        </select>
+        <!-- <input type="text" placeholder="ex: thank you's, tech interview..."> -->
+        <button class="pure-button button-small" ng-click="$ctrl.updateTaskColumns()">Update</button>
+      </form>
     </div>
     <br>
     <div>

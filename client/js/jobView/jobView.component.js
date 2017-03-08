@@ -20,6 +20,12 @@
     vm.toggleEditNotes = toggleEditNotes;
     vm.submitNotes = submitNotes;
     vm.deleteJob = deleteJob;
+    vm.updateTask = updateTask;
+
+    vm.taskIcons = {
+      write: ["fa-minus", "fa-pencil", "fa-check"],
+      schedule: ["fa-minus", "fa-calendar-check-o", "fa-check"]
+    };
 
     function onInit() {
 
@@ -44,6 +50,21 @@
       var userId = "58b0ab4eff75c44a8ca38abc";
       $jobService.deleteJob(userId, job);
       $state.go('jobList');
+    }
+
+    function updateTask(task, job, type) {
+      var userId = "58b0ab4eff75c44a8ca38abc";
+      if(type === 'interview') {
+        var newTask = { tasks: { interview: {}}};
+        newTask.tasks.interview.status = task;
+        job.tasks.interview.status = task;
+      }
+      else {
+        var newTask = { tasks:{}};
+        newTask.tasks[type] = task;
+        job.tasks[type] = task;
+      }
+      $jobService.updateJobTasks(job._id, userId, newTask);
     }
   }
 }());

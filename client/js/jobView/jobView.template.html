@@ -1,61 +1,82 @@
-<div class="mc-height">
-<div class="pure-u-g mc-content">
-  <div class="pure-u-1-5">
-    <table class="pure-table">
-      <tr>
-        <th>Resume</th>
-        <td><i class="fa {{ $ctrl.job.tasks.resumeStatus }}"></i></td>
-      </tr>
-      <tr>
-        <th>Cover Letter</th>
-        <td class="fa {{ $ctrl.job.tasks.coverLetterStatus }}"></td>
-      </tr>
-      <tr>
-        <th>Interview</th>
-        <td class="fa {{ $ctrl.job.tasks.interview.status }}">{{ $ctrl.job.tasks.interview.date }}</td>
-      </tr>
-    </table>
-    <div>
-      <a href="{{ $ctrl.job.url }}"><button>Go To Original Listing</button></a>
-      <button ng-click="$ctrl.deleteJob($ctrl.job)">Delete Job</button>
+<div class="mc-height pure-u-g">
+  <div class="pure-u-4-5 mc-content">
+      <div class="header mc-t-center">
+        <h2>{{ $ctrl.job.title }}</h2>
+        <h4>{{ $ctrl.job.company }}</h4>
+        <h4>{{ $ctrl.job.location }}</h4>
+      </div>
+    <div class="sidebar pure-u-1-5">
+      <table class="pure-table">
+        <tr>
+          <th>Resume</th>
+          <td ng-mouseenter="showMeR=!showMeR" ng-mouseleave="showMeR=!showMeR" ng-click="showMeR=!showMeR">
+            <div ng-if="showMeR" class="popup">
+              <div ng-repeat="task in $ctrl.taskIcons.write" class="popup-icons">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, $ctrl.job, 'resumeStatus')"></i>
+              </div>
+            </div>
+            <i class="fa {{$ctrl.job.tasks.resumeStatus}}" aria-hidden="true"></i>
+          </td>
+        </tr>
+        <tr>
+          <th>Cover Letter</th>
+          <td ng-mouseenter="showMeCL=!showMeCL" ng-mouseleave="showMeCL=!showMeCL" ng-click="showMeCL=!showMeCL">
+            <div ng-if="showMeCL" class="popup">
+              <div ng-repeat="task in $ctrl.taskIcons.write" class="popup-icons">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, $ctrl.job, 'coverLetterStatus')"></i>
+              </div>
+            </div>
+            <i class="fa {{ $ctrl.job.tasks.coverLetterStatus}}" aria-hidden="true"></i></td>
+        </tr>
+        <tr>
+          <th>Interview</th>
+          <td ng-mouseenter="showMeI=!showMeI" ng-mouseleave="showMeI=!showMeI" ng-click="showMeI=!showMeI">
+            <div ng-if="showMeI" class="popup">
+              <div ng-repeat="task in $ctrl.taskIcons.schedule" class="popup-icons">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, $ctrl.job, 'interview')"></i>
+              </div>
+            </div>
+            <i class="fa {{$ctrl.job.tasks.interview.status}}" aria-hidden="true"></i></td>
+        </tr>
+      </table>
+      <div class="sidebar-button">
+        <a href="{{ $ctrl.job.url }}"><button class="pure-button button-small">Go To Original Listing</button></a>
+        <button ng-click="$ctrl.deleteJob($ctrl.job)" class="pure-button button-small">Delete Job</button>
+      </div>
     </div>
-  </div>
-  <div class="pure-u-3-5">
-    <div class="header">
-      <h2>{{ $ctrl.job.title }}</h2>
-      <h4>{{ $ctrl.job.company }}</h4>
-      <h4>{{ $ctrl.job.location }}</h4>
-    </div>
-    <div>
-      <form action="/file-upload">
-        <input type="file">
-      </form>
-    </div>
-    <p>{{ $ctrl.job.description }}</p>
-    <!-- <p ng-bind-html="{{$ctrl.job.description}}"></p> -->
-    <br>
-    <h4 class="pure-u-3-5 mc-width">Notes<i class="fa fa-pencil mc-right" ng-click="$ctrl.toggleEditNotes()"></i></h4>
-    <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
-    <div ng-if="$ctrl.showEditNotes">
-      <textarea ng-model="$ctrl.newNotes" name="" id="" cols="60" rows="10"></textarea>
-      <button ng-click="$ctrl.submitNotes($ctrl.newNotes, $ctrl.job)">Save Notes</button>
-      <button ng-click="$ctrl.toggleEditNotes()">Cancel</button>
-    </div>
-    <br>
-    <div ng-if="$ctrl.glassdoor">
-      <h4>
-        <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' /></a>
-        Company Reviews
-      </h4>
-      <h5>Name: <a href="{{ $ctrl.glassdoor.name }}">{{ $ctrl.glassdoor.name }}</a></h5>
-      <h5>Industry: {{ $ctrl.glassdoor.industry }}</h5>
-      <h5>{{ $ctrl.glassdoor.featuredReview.jobTitle }} <br> {{ $ctrl.glassdoor.featuredReview.headline }}</h5>
-      <p>{{ $ctrl.glassdoor.featuredReview.location}}</p>
+    <div class="pure-u-3-5">
+      <p>{{ $ctrl.job.description }}</p>
+      <!-- <p ng-bind-html="{{$ctrl.job.description}}"></p> -->
       <br>
-      <p>Pros: {{ $ctrl.glassdoor.featuredReview.pros }}</p>
-      <p>Cons: {{ $ctrl.glassdoor.featuredReview.cons }}</p>
-      <p>{{ $ctrl.glassdoor }}</p>
+      <h4 class="">Notes<i class="fa fa-pencil mc-right" ng-click="$ctrl.toggleEditNotes()"></i></h4>
+      <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>
+      <div ng-if="$ctrl.showEditNotes">
+        <textarea ng-model="$ctrl.newNotes" name="" id="" cols="60" rows="10"></textarea>
+        <button class="pure-button button-small" ng-click="$ctrl.submitNotes($ctrl.newNotes, $ctrl.job)">Save Notes</button>
+        <button class="pure-button button-small" ng-click="$ctrl.toggleEditNotes()">Cancel</button>
+      </div>
+      <br>
+      <div ng-if="$ctrl.glassdoor">
+        <h4>
+          <a><img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' /></a>
+          Company Reviews
+        </h4>
+        <!-- <h5>Name: <a href="{{ $ctrl.glassdoor.name }}">{{ $ctrl.glassdoor.name }}</a></h5> -->
+        <div class="glassdoor-header">
+          <img src="{{$ctrl.glassdoor.squareLogo}}" alt="glassdoor logo">
+          <h4>{{$ctrl.glassdoor.name}}</h4>
+        </div>
+        <h4>Featured Review</h4>
+        <h5>{{ $ctrl.glassdoor.featuredReview.jobTitle }} <br> {{ $ctrl.glassdoor.featuredReview.headline }}</h5>
+        <p>{{ $ctrl.glassdoor.featuredReview.location}}</p>
+        <p>{{ $ctrl.glassdoor.ratingDescription}}</p>
+        <p>Overall Rating: {{ $ctrl.glassdoor.overallRating }}</p>
+        <p>Compensation and Benefits Rating: {{$ctrl.glassdoor.compensationAndBenefitsRating}}</p>
+        <p>Work Life Balance Rating: {{$ctrl.glassdoor.workLifeBalanceRating}}</p>
+        <br>
+        <p>Pros: {{ $ctrl.glassdoor.featuredReview.pros }}</p>
+        <p>Cons: {{ $ctrl.glassdoor.featuredReview.cons }}</p>
+      </div>
     </div>
   </div>
-</div>
 </div>

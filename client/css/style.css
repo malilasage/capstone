@@ -25,6 +25,31 @@ label, p, legend, td {
   font-family: 'Open Sans';
 }
 
+a {
+  color: #333230;
+}
+
+a:hover {
+  color: white;
+}
+
+a:visited {
+  color: #333230;
+}
+
+td a{
+  color: #DB604E;
+  text-decoration: none;
+}
+
+td a:visited {
+  color: #DB604E;
+}
+
+.pure-menu-link:focus {
+  background-color: transparent;
+}
+
 [ng-click] {
   cursor: pointer;
 }
@@ -37,11 +62,9 @@ label, p, legend, td {
   padding-right: 20px;
 }
 
-.job-ctrl-right {
-  position: absolute;
-  right: 0;
+.job-ctrl-right{
   float: right;
-  padding: 0;
+  padding-right: 3px !important;
 }
 
 .mc-content {
@@ -56,6 +79,14 @@ label, p, legend, td {
   background-color: #333230;
   color: white;
 }
+
+.pure-button:hover {
+  color: #DB604E;
+}
+
+.button-small {
+            font-size: 85%;
+        }
 
 .header {
   margin: 50px auto 70px auto;
@@ -85,7 +116,7 @@ label, p, legend, td {
   margin-right: 0;
 }
 
-nav ul, footer ul{
+footer ul{
   width: 100%;
 }
 
@@ -110,6 +141,20 @@ nav ul, footer ul{
   background-color: #333230;
 }
 
+.nav-right {
+  float: right;
+  margin-left: 275px;
+  /*margin-left: 80%;*/
+}
+
+.fa-cog {
+  color: #f9f9ea !important;
+}
+
+.fa-cog:hover {
+  color: #DB604E !important;
+}
+
 .mc-nav a {
   color: #f9f9ea;
   font-family: 'Roboto', light;
@@ -124,6 +169,27 @@ nav ul, footer ul{
 
 .mc-t-center {
   text-align: center;
+}
+
+.sidebar {
+  margin-right: 40px;
+}
+
+.sidebar button {
+  margin: 10px 0px;
+}
+
+.sidebar-button {
+  margin: 20px 0px;
+}
+
+/*-----glassdoor------*/
+.glassdoor-header img{
+  max-width: 15%;
+}
+
+.glassdoor-header h4 {
+  display: inline;
 }
 
 /*------- tables --------*/
@@ -144,17 +210,8 @@ nav ul, footer ul{
 }
 
 .fa-plus-circle:hover {
-  color: #D6454A;
+  color: #DB604E;
 }
-
-/*.mc-center{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%;
-  height: 50%;
-}*/
 
 /*----- search -------*/
 .search-result {
@@ -172,8 +229,9 @@ nav ul, footer ul{
     background-color: #333230;
     color: white;
     font-size: 16px;
-    padding: 5px;
-    border: none;
+    padding: 3px 6px;
+    border: 1px solid #333230;
+    border-radius: 2px;
     cursor: pointer;
 }
 
@@ -210,7 +268,7 @@ nav ul, footer ul{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    /*background-color: #D6454A;*/
+    /*background-color: #DB604E;*/
 }
 
 /*-------- pop up ----------*/
@@ -235,6 +293,10 @@ nav ul, footer ul{
 
 .popup-icons .fa{
   color: white;
+}
+
+.popup-icons .fa:hover {
+  color: #DB604E;
 }
 
 

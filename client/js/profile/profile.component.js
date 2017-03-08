@@ -16,8 +16,13 @@
     const vm = this;
 
     vm.$onInit = onInit;
+    vm.updateTaskColumns = updateTaskColums;
 
     function onInit() {
+    }
+
+    function updateTaskColums() {
+      console.log('lol bitch u better fix this');
     }
   }
 }())

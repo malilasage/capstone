@@ -4,8 +4,8 @@
       <h4>{{ result.jobtitle }}</h4>
       <strong><p>{{ result.company }} {{ result.formattedLocation }} | Posted at: {{ result.date }}</p></strong>
       <p>{{ result.snippet }}</p>
-      <button class="pure-button" ng-click="$ctrl.addJob(result.url)">Add to Hunt</button>
-      <a href="{{ result.url }}" target="_blank"><button class="pure-button">Open in Indeed.com</button></a>
+      <button class="pure-button button-small" ng-click="$ctrl.addJob(result.url)">Add to Hunt</button>
+      <a href="{{ result.url }}" target="_blank"><button class="pure-button button-small">Open in Indeed.com</button></a>
     </div>
   </div>
 </div>

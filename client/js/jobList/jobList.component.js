@@ -58,10 +58,17 @@
 
     function updateTask(task, job, type) {
       var userId = "58b0ab4eff75c44a8ca38abc";
-      var newTask = { tasks:{}};
-      newTask.tasks[type] = task;
+      if(type === 'interview') {
+        var newTask = { tasks: { interview: {}}};
+        newTask.tasks.interview.status = task;
+        job.tasks.interview.status = task;
+      }
+      else {
+        var newTask = { tasks:{}};
+        newTask.tasks[type] = task;
+        job.tasks[type] = task;
+      }
       $jobService.updateJobTasks(job._id, userId, newTask);
-      job.tasks[type] = task;
     }
   }
 }());

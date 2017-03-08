@@ -3,7 +3,7 @@
     <h2 class="mc-t-center header">My Jobs</h2>
     <div class="pure-menu pure-menu-horizontal mc-width job-ctrl pure-u-5">
       <ul class="mc-width">
-        <div>
+        <!-- <div> -->
           <li class="pure-menu-item">
               <input type="search" placeholder="Filter" ng-model="search">
           </li>
@@ -18,12 +18,10 @@
               </div>
             </div>
           </li>
-        </div>
-        <div class="job-ctrl-right">
-          <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
+          <li class="pure-menu-item job-ctrl-right" ng-click="$ctrl.toggleModal()">
             <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
           </li>
-        </div>
+        <!-- </div> -->
       </ul>
     </div>
 
@@ -56,7 +54,13 @@
               </div>
             </div>
             <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
-          <td><i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
+          <td ng-mouseenter="showMeI=!showMeI" ng-mouseleave="showMeI=!showMeI" ng-click="showMeI=!showMeI">
+            <div ng-if="showMeI" class="popup">
+              <div ng-repeat="task in $ctrl.taskIcons.schedule" class="popup-icons">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job, 'interview')"></i>
+              </div>
+            </div>
+            <i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
         </tr>
       </tbody>
     </table>
@@ -82,19 +86,29 @@
             <form class="pure-form pure-form-stacked" novalidate ng-submit="$ctrl.createJob()" name="form">
               <fieldset>
                 <legend>Enter Job Information</legend>
-                <div class="pure-control-group" ng-class="{error: form.title.$invalid }">
-                  <label>Job Title</label>
-                  <input name="title" ng-model="$ctrl.newJob.title" required>
+                <div class="pure-g">
+                  <div class="pure-control-group pure-u-1-2" ng-class="{error: form.title.$invalid }">
+                    <label>Job Title</label>
+                    <input class="pure-u-23-24" name="title" ng-model="$ctrl.newJob.title" required>
+                  </div>
+                  <div class="pure-control-group pure-u-1-2" ng-class="{error: form.company.$invalid }">
+                    <label>Company</label>
+                    <input class="pure-u-23-24" name="company" ng-model="$ctrl.newJob.company" required>
+                  </div>
+                  <div class="pure-control-group pure-u-1-2" ng-class="{error: form.location.$invalid }">
+                    <label>Location</label>
+                    <input class="pure-u-23-24" name="location" ng-model="$ctrl.newJob.location" required>
+                  </div>
+                  <div class="pure-control-group pure-u-1-2" ng-class="{error: form.url.$invalid }">
+                    <label>Listing URL</label>
+                    <input class="pure-u-23-24" name="url" ng-model="$ctrl.newJob.url" required>
+                  </div>
+                  <div class="pure-control-group pure-u-1" ng-class="{error: form.description.$invalid }">
+                    <label>Job Description</label>
+                    <textarea name="description" ng-model="$ctrl.newJob.description" cols="30" rows="10" required></textarea>
+                  </div>
+                  <button type="submit" class="pure-button" ng-disabled="form.$invalid">Submit</button>
                 </div>
-                <div class="pure-control-group" ng-class="{error: form.company.$invalid }">
-                  <label>Company</label>
-                  <input name="company" ng-model="$ctrl.newJob.company" required>
-                </div>
-                <div class="pure-control-group" ng-class="{error: form.description.$invalid }">
-                  <label>Job Description</label>
-                  <textarea name="description" ng-model="$ctrl.newJob.description" cols="30" rows="10" required></textarea>
-                </div>
-                <button type="submit" class="pure-button" ng-disabled="form.$invalid">Submit</button>
               </fieldset>
             </form>
           </div>
