@@ -29,6 +29,21 @@ label, p, legend, td {
   cursor: pointer;
 }
 
+.job-ctrl ul{
+  padding: 0;
+}
+
+.job-ctrl li {
+  padding-right: 20px;
+}
+
+.job-ctrl-right {
+  position: absolute;
+  right: 0;
+  float: right;
+  padding: 0;
+}
+
 .mc-content {
   height: 100%;
   /*text-align: center;*/
@@ -148,6 +163,7 @@ nav ul, footer ul{
     background-color: #333230;
     color: white;
     font-size: 16px;
+    padding: 5px;
     border: none;
     cursor: pointer;
 }
@@ -170,7 +186,7 @@ nav ul, footer ul{
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 15px 30px;
     text-decoration: none;
     display: block;
 }
@@ -199,9 +215,7 @@ nav ul, footer ul{
     padding: 5px 0;
     border-radius: 6px;
     position: absolute;
-    /*bottom: 51%;*/
-    /*top: 100px;*/
-    /*margin-bottom: 75px;*/
+    margin-top: -30px;
     margin-left: -50px;
     z-index: 1;
 }

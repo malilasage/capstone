@@ -6,10 +6,10 @@
     templateUrl: '/js/search/searchResults.template.html'
   });
 
-  controller.$inject = ['$http', '$stateParams'];
+  controller.$inject = ['$http', '$stateParams', '$state'];
 
 
-  function controller($http, $stateParams) {
+  function controller($http, $stateParams, $state) {
     const vm = this;
 
     vm.$onInit = onInit;
@@ -44,6 +44,7 @@
       })
       .then((res) => {
         console.log(res);
+        // $state.go('jobList');
         return res;
       })
       .catch((err) => {

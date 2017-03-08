@@ -1,7 +1,7 @@
 <div class="pure-u-g">
   <div class="pure-u-4-5 mc-content">
     <h2 class="mc-t-center header">My Jobs</h2>
-    <div class="pure-menu pure-menu-horizontal mc-width">
+    <div class="pure-menu pure-menu-horizontal mc-width job-ctrl pure-u-5">
       <ul class="mc-width">
         <div>
           <li class="pure-menu-item">
@@ -13,13 +13,13 @@
               <div class="dropdown-content">
                 <a ng-click="sort='title'; sortName='Job Title'">Job Title</a>
                 <a ng-click="sort='company'; sortName='Company'">Company</a>
-                <a>Recently Submitted</a>
+                <!-- <a>Recently Submitted</a> -->
                 <!-- Status, Progress, Upcoming interview -->
               </div>
             </div>
           </li>
         </div>
-        <div class="mc-right">
+        <div class="job-ctrl-right">
           <li class="pure-menu-item" ng-click="$ctrl.toggleModal()">
             <a><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
           </li>
@@ -51,8 +51,8 @@
           </td>
           <td ng-mouseenter="showMeCL=!showMeCL" ng-mouseleave="showMeCL=!showMeCL" ng-click="showMeCL=!showMeCL">
             <div ng-if="showMeCL" class="popup">
-              <div ng-repeat="task in $ctrl.taskIcons.write">
-                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job, 'resumeStatus')"></i>
+              <div ng-repeat="task in $ctrl.taskIcons.write" class="popup-icons">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job, 'coverLetterStatus')"></i>
               </div>
             </div>
             <i class="fa {{job.tasks.coverLetterStatus}} fa-lg" aria-hidden="true"></i></td>
