@@ -7,19 +7,24 @@
       <p>Set a new goal for yourself. Ex: I want to apply to 5 jobs this week, I want to write 8 cover letters this month.</p>
       <form action="" class="pure-form">
         <label for="">I want to</label>
-        <select name="job-action">
-          <option value="apply-to">Apply To</option>
-          <option value="write">Write</option>
-          <option value="schedule">Schedule</option>
-          <option value="finish">Finish</option>
+        <select name="job-action" ng-model="$ctrl.new.goal.action">
+          <option value="Apply To">Apply To</option>
+          <option value="Write">Write</option>
+          <option value="Schedule">Schedule</option>
+          <option value="Finish">Finish</option>
         </select>
-        <input type="number" name="quantity" min="1" max="50" placeholder="1">
-        <select name="task-type">
-          <option value="jobs">Jobs</option>
-          <option value="cover-letters">Cover Letters</option>
-          <option value="interviews">Interviews</option>
+        <input ng-model="$ctrl.new.goal.quantity" type="number" name="quantity" min="1" max="50" placeholder="1">
+        <select name="task-type" ng-model="$ctrl.new.goal.task">
+          <option value="Jobs">Jobs</option>
+          <option value="Cover Letters">Cover Letters</option>
+          <option value="Interviews">Interviews</option>
         </select>
-        <button class="pure-button button-small">Set Goal</button>
+        <select name="time" id="" ng-model="$ctrl.new.goal.time">
+          <option value="7">This Week</option>
+          <option value="14">Next Week</option>
+          <option value="30">This Month</option>
+        </select>
+        <button type="button" class="pure-button button-small" ng-click="$ctrl.setGoal()">Set Goal</button>
       </form>
     </div>
     <br>

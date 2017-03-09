@@ -16,6 +16,13 @@ const UserSchema = new Schema({
     // validator: (lastName) => lastName.length > 0,
     // message: 'user must have a last name'
   },
+  goal: {
+    createdAt: { type: Date, default: Date.now },
+    action: String,
+    task: String,
+    time: String,
+    quantity: Number
+  },
   local: {
     email: String,
     password: String
