@@ -45,8 +45,8 @@
       </div>
     </div>
     <div class="pure-u-3-5">
-      <p>{{ $ctrl.job.description }}</p>
-      <!-- <p ng-bind-html="{{$ctrl.job.description}}"></p> -->
+      <!-- <p>{{ $ctrl.job.description }}</p> -->
+      <p ng-bind-html="$ctrl.job.description"></p>
       <br>
       <h4 class="">Notes<i class="fa fa-pencil mc-right" ng-click="$ctrl.toggleEditNotes()"></i></h4>
       <p ng-if="!$ctrl.showEditNotes">{{ $ctrl.job.notes }}</p>

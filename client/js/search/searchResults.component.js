@@ -6,10 +6,10 @@
     templateUrl: '/js/search/searchResults.template.html'
   });
 
-  controller.$inject = ['$http', '$stateParams', '$state'];
+  controller.$inject = ['$http', '$stateParams', '$state', '$sce'];
 
 
-  function controller($http, $stateParams, $state) {
+  function controller($http, $stateParams, $state, $sce) {
     const vm = this;
 
     vm.$onInit = onInit;
@@ -26,6 +26,9 @@
          }
        })
        .then((response) => {
+         for (let obj in response.data.results) {
+          $sce.trustAsHtml(response.data.results[obj].snippet);
+         }
          return vm.searchResults = response.data.results;
        })
        .catch((err) => {
@@ -42,7 +45,7 @@
         }
       })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         // $state.go('jobList');
         return res;
       })

@@ -10,9 +10,9 @@
     }
   })
 
-  controller.$inject = ['$jobService', '$http', '$state'];
+  controller.$inject = ['$jobService', '$http', '$state', '$sce'];
 
-  function controller($jobService, $http, $state) {
+  function controller($jobService, $http, $state, $sce) {
 
     const vm = this;
 
@@ -28,7 +28,9 @@
     };
 
     function onInit() {
-
+      for(let obj in vm.job) {
+        $sce.trustAsHtml(vm.job.description);
+      }
     }
 
     function toggleEditNotes() {

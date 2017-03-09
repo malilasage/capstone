@@ -18,7 +18,7 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 //get all data for a specific job
-router.get('/job', isLoggedIn, (req, res) => {
+router.get('/job/:id', isLoggedIn, (req, res) => {
   User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
     function(err, data){
       if(err) { throw err; }

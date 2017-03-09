@@ -44,6 +44,7 @@ router.get('/new', (req, res) => {
         data.save((err, data) => {
             if (err) throw err;
             var index = data.jobs.length - 1;
+            console.log(data.jobs[index]);
             res.send(data.jobs[index]);
           })
         }

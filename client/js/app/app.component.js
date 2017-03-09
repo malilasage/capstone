@@ -11,10 +11,7 @@
     this.$onInit = onInit;
 
     function onInit() {
-      var user = {
-        loggedIn: true
-      }
-      // $state.go(user.loggedIn ? 'dashboard' : 'landing');
+
     }
   }
 }());

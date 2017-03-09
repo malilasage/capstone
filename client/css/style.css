@@ -46,6 +46,10 @@ td a:visited {
   color: #DB604E;
 }
 
+td a:hover {
+  color: #DB604E;
+}
+
 .pure-menu-link:focus {
   background-color: transparent;
 }
@@ -198,7 +202,7 @@ footer ul{
   position: absolute;
   top: 85%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
 }
 
 .mc-nav a.pure-menu-item:hover {
@@ -390,10 +394,10 @@ footer ul{
   right: 5px;
   padding: 5px;
   cursor: pointer;
-  font-size: 120%;
+  /*font-size: 120%;*/
   display: inline-block;
-  font-weight: bold;
-  font-family: 'arial', 'sans-serif';
+  /*font-weight: bold;*/
+  /*font-family: 'arial', 'sans-serif';*/
 }
 
 
