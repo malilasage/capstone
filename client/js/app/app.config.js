@@ -21,20 +21,6 @@
         url: 'landing'
       })
       .state({
-        name: 'dashboard',
-        parent: 'app',
-        component: 'dashboard',
-        url: 'dashboard',
-        resolve: {
-          jobData: function($jobService) {
-            return $jobService.getJobs();
-          },
-          user: function($userService) {
-            return $userService.getUser();
-          }
-        }
-      })
-      .state({
         name: 'jobList',
         component: 'jobList',
         parent: 'app',
@@ -42,6 +28,9 @@
         resolve: {
           jobs: function($jobService) {
             return $jobService.getJobs();
+          },
+          user: function($userService) {
+            return $userService.getUser();
           }
         }
       })

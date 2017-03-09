@@ -1,5 +1,22 @@
 <div class="pure-u-g">
   <div class="pure-u-4-5 mc-content">
+    <div>
+      <h4 class="mc-t-center">Welcome {{ $ctrl.user.firstName }}</h4>
+      <div>
+        <ul>
+          <li class="pure-u-7-24">
+            <canvas id="chart1" width="300" height="300"></canvas>
+          </li>
+          <li class="pure-u-7-24">
+            <canvas id="chart2" width="300" height="300"></canvas>
+          </li>
+          <li class="pure-u-7-24">
+            <span id="dashboardCounter"></span>
+            <p>jobs applied for</p>
+          </li>
+        </ul>
+      </div>
+    </div>
     <h2 class="mc-t-center header">My Jobs</h2>
     <div class="pure-menu pure-menu-horizontal mc-width job-ctrl pure-u-5">
       <ul class="mc-width">

@@ -5,7 +5,8 @@
     controller: controller,
     templateUrl: '/js/jobList/jobList.template.html',
     bindings: {
-      jobs: '<'
+      jobs: '<',
+      user: '<'
     },
     require: {
       layout: '^app'
@@ -23,21 +24,24 @@
     vm.createJob = createJob;
     vm.toggleDropdown = toggleDropdown;
     vm.updateTask = updateTask;
-    vm.confetti = confetti;
 
     vm.taskIcons = {
       write: ["fa-minus", "fa-pencil", "fa-check"],
       schedule: ["fa-minus", "fa-calendar-check-o", "fa-check"]
     };
 
-    // $scope.$watch(function(){
-    //   return $jobService.postJob()
-    // }, function(newVal, oldVal) {
-    //   vm.jobs.push(newVal);
-    // });
-
     function onInit() {
-
+      var data1 = [0, 0];
+      for (var i = 0; i < vm.jobs.length; i++) {
+        if(vm.jobs[i].tasks.resumeStatus === 'fa-check') {
+          data1[0] += 1;
+        }
+        else {
+          data1[1] += 1;
+        }
+      }
+      initCharts(data1);
+      initCounter(vm.jobs.length);
     }
 
     function toggleModal() {
@@ -70,8 +74,67 @@
       $jobService.updateJobTasks(job._id, newTask);
     }
 
-    function confetti() {
-
+    function initCounter(num) {
+      var options = {
+        useEasing : true,
+        useGrouping : true,
+        separator : ',',
+        decimal : '.',
+        prefix : '',
+        suffix : ''
+      };
+      var duration = num < 8 ? 3 : 2.5;
+      var dashboardCounter = new CountUp("dashboardCounter", 0, num, 0, duration, options);
+      dashboardCounter.start();
     }
   }
+
+  function initCharts(data1) {
+    var c1 = document.getElementById('chart1');
+    var c2 = document.getElementById('chart2');
+    // var c3 = document.getElementById('chart3');
+
+    var chart1 = new Chart(c1, {
+      type: 'pie',
+      data: {
+        labels: [
+          "Applied",
+          "Not Finished"
+        ],
+        datasets: [{
+          data: data1,
+          backgroundColor: [
+            "#FF6384",
+            "#36A2EB"
+          ],
+          hoverBackgroundColor: [
+            "#FF6384",
+            "#36A2EB"
+          ]
+        }]
+      }
+    });
+
+    var chart2 = new Chart(c2, {
+      type: 'pie',
+      data: {
+        labels: [
+          "Applied",
+          "Not Finished"
+        ],
+        datasets: [{
+          data: data1,
+          backgroundColor: [
+            "#FF6384",
+            "#36A2EB"
+          ],
+          hoverBackgroundColor: [
+            "#FF6384",
+            "#36A2EB"
+          ]
+        }]
+      }
+    })
+  }
+
 }());
