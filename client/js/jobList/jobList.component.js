@@ -45,8 +45,7 @@
     }
 
     function createJob() {
-      var userId = "58b0ab4eff75c44a8ca38abc";
-      $jobService.postJob(vm.newJob, userId).then((data) => {
+      $jobService.postJob(vm.newJob).then((data) => {
         vm.jobs.push(data);
         vm.newJob = {};
         toggleModal();
@@ -58,7 +57,6 @@
     }
 
     function updateTask(task, job, type) {
-      var userId = "58b0ab4eff75c44a8ca38abc";
       if(type === 'interview') {
         var newTask = { tasks: { interview: {}}};
         newTask.tasks.interview.status = task;
@@ -69,7 +67,7 @@
         newTask.tasks[type] = task;
         job.tasks[type] = task;
       }
-      $jobService.updateJobTasks(job._id, userId, newTask);
+      $jobService.updateJobTasks(job._id, newTask);
     }
 
     function confetti() {

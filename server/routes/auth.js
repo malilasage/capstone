@@ -1,13 +1,13 @@
 module.exports = function(server, passport) {
 
   server.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/jobs',
+    successRedirect : '/my-jobs',
     failureRedirect : '/landing',
     failureFlash : true
   }));
 
   server.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/jobs',
+    successRedirect : '/my-jobs',
     failureRedirect : '/landing',
     failureFlash : true
   }));

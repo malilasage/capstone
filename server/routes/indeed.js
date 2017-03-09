@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
   return request(newUrl).pipe(res);
 });
 
-router.get('/new/:userid', (req, res) => {
+router.get('/new', (req, res) => {
   // res.send('cool');
   // return request(req.params.url).pipe(res);
   // let $ = cheerio.load(req.params.url);
@@ -31,7 +31,7 @@ router.get('/new/:userid', (req, res) => {
     var location = $('.location').text();
     var url = req.query.url;
 
-    User.findById(req.params.userid, (err, data) => {
+    User.findById(req.session.passport.user, (err, data) => {
       if(err) throw err;
       else {
         data.jobs.push({

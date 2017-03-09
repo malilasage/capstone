@@ -27,12 +27,10 @@
         url: 'dashboard',
         resolve: {
           jobData: function($jobService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
-            return $jobService.getJobs(userId);
+            return $jobService.getJobs();
           },
           user: function($userService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
-            return $userService.getUser(userId);
+            return $userService.getUser();
           }
         }
       })
@@ -40,11 +38,10 @@
         name: 'jobList',
         component: 'jobList',
         parent: 'app',
-        url: 'jobs',
+        url: 'my-jobs',
         resolve: {
           jobs: function($jobService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
-            return $jobService.getJobs(userId);
+            return $jobService.getJobs();
           }
         }
       })
@@ -70,8 +67,7 @@
         url: 'profile',
         resolve: {
           user: function($userService) {
-            var userId = "58b0ab4eff75c44a8ca38abc";
-            return $userService.getUser(userId);
+            return $userService.getUser();
           }
         }
       })

@@ -7,8 +7,8 @@ const User = require('../src/users');
 mongoose.Promise = require('bluebird');
 
 //get all of a users jobs
-router.get('/:id', isLoggedIn, (req, res) => {
-  User.findById(req.params.id, (err, data) => {
+router.get('/', isLoggedIn, (req, res) => {
+  User.findById(req.session.passport.user, (err, data) => {
     if(err) { res.send(404) }
     if(data === null) { res.send(404) }
     else {
@@ -18,7 +18,7 @@ router.get('/:id', isLoggedIn, (req, res) => {
 });
 
 //get all data for a specific job
-router.get('/job/:id', isLoggedIn, (req, res) => {
+router.get('/job', isLoggedIn, (req, res) => {
   User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
     function(err, data){
       if(err) { throw err; }
@@ -28,8 +28,8 @@ router.get('/job/:id', isLoggedIn, (req, res) => {
 });
 
 //create a new job
-router.post('/:userid', isLoggedIn, (req, res) => {
-  User.findById(req.params.userid, (err, data) => {
+router.post('/', isLoggedIn, (req, res) => {
+  User.findById(req.session.passport.user, (err, data) => {
     if(err) throw err;
     if(!req.body.title) { res.send(400) }
     else {
@@ -52,13 +52,13 @@ router.post('/:userid', isLoggedIn, (req, res) => {
 });
 
 //update tasks for a specific job
-router.patch('/:userid/:id', isLoggedIn, (req, res) => {
+router.patch('/:id', isLoggedIn, (req, res) => {
   User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
     function(err, data){
       if(err) { throw err; }
       if(data === null) { res.send(404) }
       updateData(data.jobs[0], req.body, (set) => {
-        User.update({'_id': req.params.userid, 'jobs._id': req.params.id}, {$set: {'jobs.$': set}}, (err, nSaved) => {
+        User.update({'_id': req.session.passport.user, 'jobs._id': req.params.id}, {$set: {'jobs.$': set}}, (err, nSaved) => {
           if(err) { throw err; }
           // res.send(nSaved);
           User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
@@ -113,9 +113,9 @@ router.patch('/:userid/:id', isLoggedIn, (req, res) => {
 })
 
 //delete a job
-router.delete('/:userid/:id', isLoggedIn, (req, res) => {
+router.delete('/:id', isLoggedIn, (req, res) => {
   var jobId = req.params.id;
-  User.findById(req.params.userid, (err, data) => {
+  User.findById(req.session.passport.user, (err, data) => {
     if(err) throw err;
     else {
       data.jobs.pull({_id: jobId});

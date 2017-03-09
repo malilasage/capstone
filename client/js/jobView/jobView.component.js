@@ -37,23 +37,20 @@
     }
 
     function submitNotes(notes, job) {
-      var userId = "58b0ab4eff75c44a8ca38abc";
       var newInfo = {};
       newInfo.notes = notes;
-      $jobService.updateJobTasks(job._id, userId, newInfo);
+      $jobService.updateJobTasks(job._id, newInfo);
       vm.job.notes = notes;
       toggleEditNotes();
     }
 
     function deleteJob(job) {
       console.log(job);
-      var userId = "58b0ab4eff75c44a8ca38abc";
-      $jobService.deleteJob(userId, job);
+      $jobService.deleteJob(job);
       $state.go('jobList');
     }
 
     function updateTask(task, job, type) {
-      var userId = "58b0ab4eff75c44a8ca38abc";
       if(type === 'interview') {
         var newTask = { tasks: { interview: {}}};
         newTask.tasks.interview.status = task;
@@ -64,7 +61,7 @@
         newTask.tasks[type] = task;
         job.tasks[type] = task;
       }
-      $jobService.updateJobTasks(job._id, userId, newTask);
+      $jobService.updateJobTasks(job._id, newTask);
     }
   }
 }());

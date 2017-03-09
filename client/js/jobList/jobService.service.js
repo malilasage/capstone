@@ -3,10 +3,10 @@
 
   angular.module('app')
     .service('$jobService', function($http) {
-      this.getJobs = function getJobs(userId) {
+      this.getJobs = function getJobs() {
         return $http({
            method:'GET',
-           url: `/jobs/${userId}`
+           url: `/jobs`
         }).then((data, err) => {
           if(err) { throw err }
           return data.data;
@@ -23,23 +23,23 @@
         })
       }
 
-      this.postJob = function postJob(job, userId) {
-        return $http.post(`/jobs/${userId}`, job).then((data, err) => {
+      this.postJob = function postJob(job) {
+        return $http.post(`/jobs`, job).then((data, err) => {
           if(err) { throw err; }
           return data.data;
         })
       }
 
-      this.deleteJob = function deleteJob(userId, job) {
-        $http.delete(`/jobs/${userId}/${job._id}`).then((data, err) => {
+      this.deleteJob = function deleteJob(job) {
+        $http.delete(`/jobs/${job._id}`).then((data, err) => {
           if(err) {throw err}
           console.log(data);
           return data.data;
         })
       }
 
-      this.updateJobTasks = function(jobId, userId, task) {
-        $http.patch(`/jobs/${userId}/${jobId}`, task).then((data, err) => {
+      this.updateJobTasks = function(jobId, task) {
+        $http.patch(`/jobs/${jobId}`, task).then((data, err) => {
           if(err) {throw err}
           return data.data;
         })

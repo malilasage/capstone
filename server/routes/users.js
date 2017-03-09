@@ -17,13 +17,11 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 //gets all of a users data
-router.get('/getit', isLoggedIn, (req, res) => {
-    console.log(req.session.passport.user);
+router.get('/getuser', isLoggedIn, (req, res) => {
   User.findById(req.session.passport.user, (err, data) => {
     if(err) { res.send(404) }
     if(data === null) { res.send(404) }
     else {
-      console.log(data + '~~~~~~');
       res.send(data);
     }
   })
@@ -42,8 +40,8 @@ router.post('/', isLoggedIn, (req, res) => {
 });
 
 //update user info
-router.patch('/:id', isLoggedIn, (req, res) => {
-  User.findByIdAndUpdate(req.params.id,
+router.patch('/', isLoggedIn, (req, res) => {
+  User.findByIdAndUpdate(req.session.passport.user,
     { $set: req.body }, { new: true },
     function (err, data) {
       if (err) throw err;
@@ -52,8 +50,8 @@ router.patch('/:id', isLoggedIn, (req, res) => {
 });
 
 //delete user
-router.delete('/:id', isLoggedIn, (req, res) => {
-  User.findById(req.params.id, (err, data) => {
+router.delete('/', isLoggedIn, (req, res) => {
+  User.findById(req.session.passport.user, (err, data) => {
     if(err) throw err;
     data.remove((err, data) => {
       if(err) throw err;
