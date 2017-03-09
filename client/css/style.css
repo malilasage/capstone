@@ -374,7 +374,7 @@ footer ul{
   /* A centered div above the overlay with a box shadow. */
   z-index:10000;
   position: absolute;
-  width: 50%; /* Default */
+  width: 30%; /* Default */
 
   /* Center the dialog */
   top: 50%;
