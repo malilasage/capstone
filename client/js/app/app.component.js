@@ -9,7 +9,7 @@
   function controller($state) {
 
     this.$onInit = onInit;
-
+    // $state.go('landing');
     function onInit() {
 
     }

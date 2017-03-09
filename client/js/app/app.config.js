@@ -12,6 +12,7 @@
       .state({
         name: 'app',
         component: 'app',
+        // abstract: 'true',
         url: '/'
       })
       .state({
