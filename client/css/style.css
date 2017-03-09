@@ -9,7 +9,7 @@ html {
 body {
   min-height: 100%;
   position: relative;
-  padding-bottom: 75px;
+  padding-bottom: 5em;
 }
 
 h2 {
@@ -176,6 +176,10 @@ footer ul{
   /*opacity: 0.9;*/
 }
 
+.landing-button {
+  margin-top: 2em;
+}
+
 .landing h1 {
   color: #333230;
   font-family: 'Roboto', light;
@@ -185,16 +189,13 @@ footer ul{
 .landing-text {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .button-xlarge {
   font-size: 125%;
-  /*text-align: center;*/
-
-  /*margin: auto;*/
 }
 
 .landing-buttons {
@@ -203,6 +204,16 @@ footer ul{
   top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.landing-dashboard {
+  margin-bottom: 5em;
+}
+
+#tagline {
+  /*position: relative;*/
+  /*bottom: 10px;*/
+  /*text-align: center;*/
 }
 
 .mc-nav a.pure-menu-item:hover {
@@ -405,13 +416,19 @@ footer ul{
   height: 20px;
 }
 
-/*------- confetti ------*/
-canvas {
-  display: block;
-  position: relative;
-  zindex: 1;
-  pointer-events: none;
+#chart1 {
+  /*border: 1px solid black;*/
+  height: 16em !important;
+  width: 16em !important;
 }
+
+#dashboardCounter {
+  font-size: 12em;
+  font-family: 'Roboto';
+}
+
+/*------- confetti ------*/
+
 
 #confetti {
   /*text-align: center;
@@ -423,12 +440,12 @@ canvas {
   margin-left: -250px;
   margin-top: -150px;*/
 
-  position:absolute;
+  /*position:absolute;
   z-index:9999;
   top:10;
   left:0;
   width:100%;
   height:100%;
   background-color:#000000;
-  opacity: 0.8;
+  opacity: 0.8;*/
 }

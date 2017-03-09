@@ -11,7 +11,7 @@
     this.$onInit = onInit;
     // $state.go('landing');
     function onInit() {
-
+      // $state.go('landing');
     }
   }
 }());

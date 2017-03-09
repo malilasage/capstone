@@ -6,7 +6,9 @@
       <button class="pure-button button-xlarge" ng-click="$ctrl.toggleSignUp()">Sign Up</button>
     </div>
   </div>
-  <p>a simple, customizable way to stay motivated and organized on the job hunt</p>
+  <div id="tagline" >
+    <p class="mc-t-center">a simple, customizable way to stay motivated and organized on the job hunt</p>
+  </div>
 </div>
 <div ng-if="$ctrl.openSignUp" id="modal">
   <div class='ng-modal-overlay' ng-click='$ctrl.toggleSignUp()'></div>
@@ -16,7 +18,7 @@
         <div class='ng-modal-close' ng-click='$ctrl.toggleSignUp()'><i class="fa fa-times"></i></div>
         <div class='ng-modal-dialog-content'>
           <div>
-            <form action="/signup" method="post" class="pure-form">
+            <form action="/signup" method="post" class="pure-form pure-form-stacked">
               <fieldset>
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName">
@@ -25,11 +27,11 @@
                 <input type="text" id="lastName" name="lastName">
 
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="Email" name="email">
+                <input id="email" type="email" name="email">
 
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Password" name="password">
-                <button type="submit" class="pure-button">Submit</button>
+                <input id="password" type="password" name="password">
+                <button type="submit" class="pure-button landing-button">Submit</button>
               </fieldset>
             </form>
           </div>
@@ -45,14 +47,14 @@
         <div class='ng-modal-close' ng-click='$ctrl.toggleLogIn()'><i class="fa fa-times"></i></div>
         <div class='ng-modal-dialog-content'>
           <div>
-            <form action="/login" method="post" class="pure-form">
+            <form action="/login" method="post" class="pure-form pure-form-stacked">
               <fieldset>
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="Email" name="email">
+                <input id="email" type="email" name="email">
 
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Password" name="password">
-                <button type="submit" class="pure-button">Submit</button>
+                <input id="password" type="password" name="password">
+                <button type="submit" class="pure-button landing-button">Submit</button>
               </fieldset>
             </form>
           </div>

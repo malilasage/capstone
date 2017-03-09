@@ -34,7 +34,7 @@
       console.log(vm.user);
       var data1 = [0, 0];
       for (var i = 0; i < vm.jobs.length; i++) {
-        if(vm.jobs[i].tasks.resumeStatus === 'fa-check') {
+        if((vm.jobs[i].tasks.resumeStatus === 'fa-check') && (vm.jobs[i].tasks.coverLetterStatus === 'fa-check')) {
           data1[0] += 1;
         }
         else {
@@ -92,16 +92,18 @@
 
     function initCharts(data1) {
       var c1 = document.getElementById('chart1');
-      var label1 = vm.user.goal.task + ' left to go!';
+      var label1A = data1[0] + ' ' + vm.user.goal.task + ' done';
+      var label1B = data1[1] + ' ' + vm.user.goal.task + ' left to go!';
       // var c2 = document.getElementById('chart2');
       // var c3 = document.getElementById('chart3');
-
+      c1.height = 100;
+      c1.width = 100;
       var chart1 = new Chart(c1, {
         type: 'pie',
         data: {
           labels: [
-            "Goal",
-            label1
+            label1A,
+            label1B
           ],
           datasets: [{
             data: data1,

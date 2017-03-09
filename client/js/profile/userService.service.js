@@ -9,6 +9,7 @@
            url: `/user/getuser`
         }).then((data, err) => {
           if(err) { throw err }
+          console.log(data);
           return data.data;
         })
       };

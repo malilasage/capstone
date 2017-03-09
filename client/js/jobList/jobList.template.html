@@ -1,23 +1,24 @@
 <div class="pure-u-g">
   <div class="pure-u-4-5 mc-content">
-    <div>
-      <h4 class="mc-t-center">Welcome {{ $ctrl.user.firstName }}</h4>
+    <div class="landing-dashboard">
+      <h2 class="mc-t-center header">Welcome {{ $ctrl.user.firstName }}</h2>
       <div>
         <ul>
           <li class="pure-u-11-24">
-            <canvas id="chart1" width="300" height="300"></canvas>
+            <div>
+              <canvas id="chart1" width="100" height="100"></canvas>
+            </div>
+            <p class="mc-t-center">
+              Goal: {{$ctrl.user.goal.action}} {{$ctrl.goal.user.quantity}}  {{$ctrl.user.goal.task}} {{$ctrl.user.goal.time}}
+            </p>
           </li>
-          <!-- <li class="pure-u-7-24">
-            <canvas id="chart2" width="300" height="300"></canvas>
-          </li> -->
-          <li class="pure-u-11-24">
+          <li class="pure-u-11-24 mc-t-center">
             <span id="dashboardCounter"></span>
             <p>jobs applied for</p>
           </li>
         </ul>
       </div>
     </div>
-    <h2 class="mc-t-center header">My Jobs</h2>
     <div class="pure-menu pure-menu-horizontal mc-width job-ctrl pure-u-5">
       <ul class="mc-width">
         <!-- <div> -->
