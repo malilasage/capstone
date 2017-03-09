@@ -54,7 +54,7 @@
         name: 'profile',
         component: 'profile',
         parent: 'app',
-        url: 'profile',
+        url: 'settings',
         resolve: {
           user: function($userService) {
             return $userService.getUser();

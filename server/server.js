@@ -29,7 +29,6 @@ server.use(bodyParser())
 server.use(express.static(path.join(__dirname, './client')))
 server.use(express.static(path.join(__dirname, '/../', 'client')))
 server.use(express.static(path.join(__dirname, '/../', 'node_modules')))
-server.use(express.static(path.join(__dirname, '/../', 'assets')))
 server.use(morgan('dev'));
 server.use(cookieParser());
 

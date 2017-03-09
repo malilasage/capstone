@@ -21,6 +21,7 @@
     vm.submitNotes = submitNotes;
     vm.deleteJob = deleteJob;
     vm.updateTask = updateTask;
+    vm.goosehire = goosehire;
 
     vm.taskIcons = {
       write: ["fa-minus", "fa-pencil", "fa-check"],
@@ -28,9 +29,12 @@
     };
 
     function onInit() {
-      for(let obj in vm.job) {
-        $sce.trustAsHtml(vm.job.description);
-      }
+      $sce.trustAsHtml(vm.job.description);
+      console.log(vm.job.url);
+    }
+
+    function goosehire(url) {
+      
     }
 
     function toggleEditNotes() {

@@ -20,16 +20,18 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  // res.send('cool');
-  // return request(req.params.url).pipe(res);
-  // let $ = cheerio.load(req.params.url);
+
   return request(req.query.url, (err, response, html) => {
     var $ = cheerio.load(html);
     var description = $('#job_summary').text();
     var title = $('.jobtitle').text();
     var company = $('.company').text();
-    var location = $('.location').text();
+    var indeedLocation = $('.location').text();
     var url = req.query.url;
+
+    var location = indeedLocation.split(',');
+    location = location[0];
+    console.log(location);
 
     User.findById(req.session.passport.user, (err, data) => {
       if(err) throw err;
