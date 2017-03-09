@@ -27,9 +27,9 @@
     }
 
     function setGoal() {
-      console.log(vm.new);
       $http.patch('/goals', vm.new).then((res) => {
         console.log(res);
+        console.log('goal set');
       })
     }
   }

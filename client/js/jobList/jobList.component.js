@@ -13,9 +13,9 @@
     }
   })
 
-  controller.$inject = ['$jobService'];
+  controller.$inject = ['$jobService', '$userService'];
 
-  function controller($jobService) {
+  function controller($jobService, userService) {
 
     const vm = this;
 
@@ -31,6 +31,7 @@
     };
 
     function onInit() {
+      console.log(vm.user);
       var data1 = [0, 0];
       for (var i = 0; i < vm.jobs.length; i++) {
         if(vm.jobs[i].tasks.resumeStatus === 'fa-check') {
@@ -87,54 +88,55 @@
       var dashboardCounter = new CountUp("dashboardCounter", 0, num, 0, duration, options);
       dashboardCounter.start();
     }
-  }
 
-  function initCharts(data1) {
-    var c1 = document.getElementById('chart1');
-    var c2 = document.getElementById('chart2');
-    // var c3 = document.getElementById('chart3');
 
-    var chart1 = new Chart(c1, {
-      type: 'pie',
-      data: {
-        labels: [
-          "Applied",
-          "Not Finished"
-        ],
-        datasets: [{
-          data: data1,
-          backgroundColor: [
-            "#FF6384",
-            "#36A2EB"
+    function initCharts(data1) {
+      var c1 = document.getElementById('chart1');
+      var label1 = vm.user.goal.task + ' left to go!';
+      // var c2 = document.getElementById('chart2');
+      // var c3 = document.getElementById('chart3');
+
+      var chart1 = new Chart(c1, {
+        type: 'pie',
+        data: {
+          labels: [
+            "Goal",
+            label1
           ],
-          hoverBackgroundColor: [
-            "#FF6384",
-            "#36A2EB"
-          ]
-        }]
-      }
-    });
+          datasets: [{
+            data: data1,
+            backgroundColor: [
+              "#7BC3CE",
+              "#DB604E"
+            ],
+            hoverBackgroundColor: [
+              "#7BC3CE",
+              "#DB604E"
+            ]
+          }]
+        }
+      });
 
-    var chart2 = new Chart(c2, {
-      type: 'pie',
-      data: {
-        labels: [
-          "Applied",
-          "Not Finished"
-        ],
-        datasets: [{
-          data: data1,
-          backgroundColor: [
-            "#FF6384",
-            "#36A2EB"
-          ],
-          hoverBackgroundColor: [
-            "#FF6384",
-            "#36A2EB"
-          ]
-        }]
-      }
-    })
+      // var chart2 = new Chart(c2, {
+      //   type: 'pie',
+      //   data: {
+      //     labels: [
+      //       "Applied",
+      //       "Not Finished"
+      //     ],
+      //     datasets: [{
+      //       data: data1,
+      //       backgroundColor: [
+      //         "#FF6384",
+      //         "#36A2EB"
+      //       ],
+      //       hoverBackgroundColor: [
+      //         "#FF6384",
+      //         "#36A2EB"
+      //       ]
+      //     }]
+      //   }
+      // })
+    }
   }
-
 }());

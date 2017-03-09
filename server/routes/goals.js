@@ -25,7 +25,6 @@ router.patch('/', isLoggedIn, (req, res) => {
     { $set: req.body }, { new: true },
     function (err, data) {
       if (err) throw err;
-      console.log(data);
       res.send(data);
     });
 });
