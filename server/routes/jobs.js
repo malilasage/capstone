@@ -7,7 +7,7 @@ const User = require('../src/users');
 mongoose.Promise = require('bluebird');
 
 //get all of a users jobs
-router.get('/:id', (req, res) => {
+router.get('/:id', isLoggedIn, (req, res) => {
   User.findById(req.params.id, (err, data) => {
     if(err) { res.send(404) }
     if(data === null) { res.send(404) }
@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 });
 
 //get all data for a specific job
-router.get('/job/:id', (req, res) => {
+router.get('/job/:id', isLoggedIn, (req, res) => {
   User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
     function(err, data){
       if(err) { throw err; }
@@ -28,7 +28,7 @@ router.get('/job/:id', (req, res) => {
 });
 
 //create a new job
-router.post('/:userid', (req, res) => {
+router.post('/:userid', isLoggedIn, (req, res) => {
   User.findById(req.params.userid, (err, data) => {
     if(err) throw err;
     if(!req.body.title) { res.send(400) }
@@ -52,7 +52,7 @@ router.post('/:userid', (req, res) => {
 });
 
 //update tasks for a specific job
-router.patch('/:userid/:id', (req, res) => {
+router.patch('/:userid/:id', isLoggedIn, (req, res) => {
   User.findOne({'jobs._id': req.params.id}, {'jobs.$': '1'},
     function(err, data){
       if(err) { throw err; }
@@ -113,7 +113,7 @@ router.patch('/:userid/:id', (req, res) => {
 })
 
 //delete a job
-router.delete('/:userid/:id', (req, res) => {
+router.delete('/:userid/:id', isLoggedIn, (req, res) => {
   var jobId = req.params.id;
   User.findById(req.params.userid, (err, data) => {
     if(err) throw err;
@@ -126,5 +126,11 @@ router.delete('/:userid/:id', (req, res) => {
     }
   })
 });
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/landing');
+}
 
 module.exports = router;

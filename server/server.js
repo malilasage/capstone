@@ -19,11 +19,26 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
+
+require('./config/passport')(passport);
 
 server.use(bodyParser.json())
+server.use(bodyParser())
 server.use(express.static(path.join(__dirname, './client')))
 server.use(express.static(path.join(__dirname, '/../', 'client')))
 server.use(express.static(path.join(__dirname, '/../', 'node_modules')))
+server.use(morgan('dev'));
+server.use(cookieParser());
+
+//passport
+server.use(session({ secret: 'suhdude'}))
+server.use(passport.initialize())
+server.use(passport.session())
+server.use(flash())
+
+require('./routes/auth')(server, passport);
 
 server.use('/user', require('./routes/users'))
 server.use('/jobs', require('./routes/jobs'))

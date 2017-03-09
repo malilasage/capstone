@@ -7,9 +7,21 @@
   })
   function controller() {
 
-    this.$onInit = onInit;
+    const vm = this;
+
+    vm.$onInit = onInit;
+    vm.toggleSignUp = toggleSignUp;
+    vm.toggleLogIn = toggleLogIn;
 
     function onInit() {
+    }
+
+    function toggleSignUp() {
+      vm.openSignUp = !vm.openSignUp;
+    }
+
+    function toggleLogIn() {
+      vm.openLogIn = !vm.openLogIn;
     }
   }
 }())

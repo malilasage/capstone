@@ -1,3 +1,55 @@
-<div class="pure-u-1">
-  <h4>landing</h4>
+<div class="landing">
+  <div class="landing-text">
+    <h1>HUNT</h1>
+    <div class="landing-buttons">
+      <button class="pure-button button-xlarge" ng-click="$ctrl.toggleLogIn()">Log In</button>
+      <button class="pure-button button-xlarge" ng-click="$ctrl.toggleSignUp()">Sign Up</button>
+    </div>
+  </div>
+</div>
+<div ng-if="$ctrl.openSignUp" id="modal">
+  <div class='ng-modal-overlay' ng-click='$ctrl.toggleSignUp()'></div>
+    <div class='ng-modal-dialog pure-u-g'>
+      <div class="mc-content pure-u-4-5">
+        <h4>Sign Up</h4>
+        <div class='ng-modal-close' ng-click='$ctrl.toggleSignUp()'>X</div>
+        <div class='ng-modal-dialog-content'>
+          <div>
+            <form action="/signup" method="post" class="pure-form">
+              <fieldset>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email" name="email">
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Password" name="password">
+                <button type="submit" class="pure-button">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-if="$ctrl.openLogIn" id="modal">
+  <div class='ng-modal-overlay' ng-click='$ctrl.toggleLogIn()'></div>
+    <div class='ng-modal-dialog pure-u-g'>
+      <div class="mc-content pure-u-4-5">
+        <h4>Sign Up</h4>
+        <div class='ng-modal-close' ng-click='$ctrl.toggleLogIn()'>X</div>
+        <div class='ng-modal-dialog-content'>
+          <div>
+            <form action="/login" method="post" class="pure-form">
+              <fieldset>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email" name="email">
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Password" name="password">
+                <button type="submit" class="pure-button">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>

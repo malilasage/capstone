@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const User = require('../src/users');
 mongoose.Promise = require('bluebird');
 
-router.get('/', (req, res) => {
+router.get('/', isLoggedIn, (req, res) => {
   User.find((err, data) => {
     if(err) { throw err; }
     else {
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 //gets all of a users data
-router.get('/:id', (req, res) => {
+router.get('/:id', isLoggedIn, (req, res) => {
   User.findById(req.params.id, (err, data) => {
     console.log(req.params.id);
     if(err) { res.send(404) }
@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 });
 
 //create new user
-router.post('/', (req, res) => {
+router.post('/', isLoggedIn, (req, res) => {
   User.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
 });
 
 //update user info
-router.patch('/:id', (req, res) => {
+router.patch('/:id', isLoggedIn, (req, res) => {
   User.findByIdAndUpdate(req.params.id,
     { $set: req.body }, { new: true },
     function (err, data) {
@@ -50,7 +50,7 @@ router.patch('/:id', (req, res) => {
 });
 
 //delete user
-router.delete('/:id', (req, res) => {
+router.delete('/:id', isLoggedIn, (req, res) => {
   User.findById(req.params.id, (err, data) => {
     if(err) throw err;
     data.remove((err, data) => {
@@ -59,5 +59,16 @@ router.delete('/:id', (req, res) => {
     })
   })
 });
+
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/landing');
+}
 
 module.exports = router;
