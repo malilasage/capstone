@@ -31,6 +31,7 @@
     };
 
     function onInit() {
+      console.log(vm.user);
       var data1 = [0, 0];
       for (var i = 0; i < vm.jobs.length; i++) {
         if(vm.jobs[i].tasks.resumeStatus === 'fa-check') {

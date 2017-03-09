@@ -17,6 +17,12 @@
           <div>
             <form action="/signup" method="post" class="pure-form">
               <fieldset>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName">
+
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName">
+
                 <label for="email">Email</label>
                 <input id="email" type="email" placeholder="Email" name="email">
 
@@ -34,7 +40,7 @@
   <div class='ng-modal-overlay' ng-click='$ctrl.toggleLogIn()'></div>
     <div class='ng-modal-dialog pure-u-g'>
       <div class="mc-content pure-u-4-5">
-        <h4>Sign Up</h4>
+        <h4>Log In</h4>
         <div class='ng-modal-close' ng-click='$ctrl.toggleLogIn()'>X</div>
         <div class='ng-modal-dialog-content'>
           <div>
