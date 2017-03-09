@@ -8,6 +8,7 @@ mongoose.Promise = require('bluebird');
 
 router.get('/', isLoggedIn, (req, res) => {
   User.find((err, data) => {
+    console.log(req.session.passport.user);
     if(err) { throw err; }
     else {
       res.send(data);
@@ -16,12 +17,13 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 //gets all of a users data
-router.get('/:id', isLoggedIn, (req, res) => {
-  User.findById(req.params.id, (err, data) => {
-    console.log(req.params.id);
+router.get('/getit', isLoggedIn, (req, res) => {
+    console.log(req.session.passport.user);
+  User.findById(req.session.passport.user, (err, data) => {
     if(err) { res.send(404) }
     if(data === null) { res.send(404) }
     else {
+      console.log(data + '~~~~~~');
       res.send(data);
     }
   })
@@ -60,14 +62,10 @@ router.delete('/:id', isLoggedIn, (req, res) => {
   })
 });
 
-// route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
 
-    // if user is authenticated in the session, carry on
+function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
-
-    // if they aren't redirect them to the home page
     res.redirect('/landing');
 }
 

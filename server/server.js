@@ -40,7 +40,7 @@ server.use(flash())
 
 require('./routes/auth')(server, passport);
 
-server.use('/user', require('./routes/users'))
+server.use('/user', require('./routes/users'));
 server.use('/jobs', require('./routes/jobs'))
 server.use('/indeed', require('./routes/indeed'))
 
