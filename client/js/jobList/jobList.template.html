@@ -50,6 +50,7 @@
           <th>Resume</th>
           <th>Cover Letter</th>
           <th>Interview</th>
+          <th ng-if="$ctrl.user.column">{{$ctrl.user.column}}</th>
         </tr>
       </thead>
       <tbody>
@@ -78,6 +79,13 @@
               </div>
             </div>
             <i class="fa {{job.tasks.interview.status}} fa-lg" aria-hidden="true"></i></td>
+          <td ng-if="$ctrl.user.column" ng-mouseenter="showMeC=!showMeC" ng-mouseleave="showMeC=!showMeC" ng-click="showMeC=!showMeC">
+            <div ng-if="showMeC" class="popup">
+              <div ng-repeat="task in $ctrl.taskIcons.schedule" class="popup-icons">
+                <i class="fa {{task}}" ng-click="$ctrl.updateTask(task, job, 'column')"></i>
+              </div>
+            </div>
+            <i class="fa {{job.tasks.column}} fa-lg" aria-hidden="true"></i></td>
         </tr>
       </tbody>
     </table>

@@ -58,6 +58,10 @@ td a:hover {
   cursor: pointer;
 }
 
+.logout {
+  margin-top: 4em;
+}
+
 .job-ctrl ul{
   padding: 0;
 }

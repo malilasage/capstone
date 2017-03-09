@@ -23,7 +23,10 @@
     }
 
     function updateTaskColums() {
-      console.log('lol bitch u better fix this');
+      console.log(vm.columns);
+      $http.patch('/user', vm.columns).then((res) => {
+        console.log(res);
+      })
     }
 
     function setGoal() {

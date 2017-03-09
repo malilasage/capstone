@@ -23,6 +23,7 @@ const UserSchema = new Schema({
     time: String,
     quantity: Number
   },
+  column: String,
   local: {
     email: String,
     password: String

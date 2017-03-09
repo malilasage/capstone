@@ -89,6 +89,9 @@ router.patch('/:id', isLoggedIn, (req, res) => {
     if(body.url !== undefined) {
       data.url = body.url;
     }
+    if(body.column !== undefined) {
+      data.column = body.column;
+    }
     if(body.tasks !== undefined) {
       if(body.tasks.coverLetterStatus !== undefined) {
         data.tasks.coverLetterStatus = body.tasks.coverLetterStatus;

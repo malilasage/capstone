@@ -27,6 +27,9 @@ const JobsSchema = new Schema({
       coverLetterStatus: {
         type: String, default: "fa-minus"
       },
+      column: {
+        type: String, default: "fa-minus"
+      },
       interview: {
         status: {
           type: String, default: "fa-minus"

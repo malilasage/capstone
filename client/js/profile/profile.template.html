@@ -33,17 +33,17 @@
       <p>Want to remember to send thank you notes after your interview? Customize your task list... </p>
       <form action="" class="pure-form">
         <label for="">Add a Column</label>
-        <select name="columns">
-          <option value="thank-you">Thank You Notes</option>
-          <option value="tech-interview">Tech Interviews</option>
-          <option value="deadline">Application Deadline</option>
+        <select name="columns" ng-model="$ctrl.columns.column">
+          <option value="Thank You Notes">Thank You Notes</option>
+          <option value="Tech Interview">Tech Interviews</option>
+          <option value="Deadline">Application Deadline</option>
         </select>
         <!-- <input type="text" placeholder="ex: thank you's, tech interview..."> -->
-        <button class="pure-button button-small" ng-click="$ctrl.updateTaskColumns()">Update</button>
+        <button type="button" class="pure-button button-small" ng-click="$ctrl.updateTaskColumns()">Update</button>
       </form>
     </div>
     <br>
-    <div>
+    <div class="logout">
       <!-- <h4>My Resumes/Cover Letters</h4> -->
       <form action="/logout" method="get">
         <button class="pure-button">Log Out</button>
