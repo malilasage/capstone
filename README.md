@@ -2,7 +2,7 @@
 A simple, customizable tool to stay organized on the job hunt.
 Deployed [here](https://malilasage-hunt.herokuapp.com/landing)
 
-[Learn](learn.md) about the site
+[Learn](learn.md) about the site  
 [Start](#code) playing with the code
 
 ## <a name="code"></a> Getting Started
@@ -26,6 +26,6 @@ npm start
 ```
 
 ### Authors
-*Malila Clearwater - [malilasage](https://github.com/malilasage)
+* Malila Clearwater - [malilasage](https://github.com/malilasage)
 
 If you run into any bugs, please let me know by submitting an issue!
