@@ -24,6 +24,6 @@ Hunt also has built-in search functionality, provided by the [Indeed API](https:
 
 ![](/md-images/hunt-settings.gif)
 
-This is where users can set goals and add custom columns. The goal setting is very modular, allowing the user to tailor goals to their own desires. Custom columns can be added to suit personal needs, helping users account for things specific to them that they may encounter in their job search.
+This is where users can set goals and add custom columns. The goal setting is very modular, allowing the user to tailor objectives to their own desires. Custom columns can be added to suit personal needs, helping users account for things specific to them that they may encounter in their job search.
 
 #### Happy Hunting. Visit [Hunt](malilasage-hunt.herokuapp.com)
