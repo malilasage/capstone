@@ -1,6 +1,8 @@
 # About the Project
 Hunt is a job search dashboard that allows users to keep track of jobs they are currently in the process of applying for. Inspiration for this project comes from bullet journaling, which is an analog customizable organization system. More can be learned about bullet journaling [here](http://bulletjournal.com/). In keeping with the bullet journal philosophy, Hunt aims to be customizable to a users individual needs.
 
+Live site can be view [here](https://malilasage-hunt.herokuapp.com/landing)
+
 ## Dashboard
 
 ![](/md-images/hunt-dashboard.gif)
