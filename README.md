@@ -25,6 +25,11 @@ nodemon server/server.js
 npm start
 ```
 
+### Deployment
+Follow [this]() tutorial from scotch.io and [this] one from Heroku to deploy. Heroku does not support Mongo, but provides an add-on with MongoLab for deployment of MEAN apps.
+
+You will also need to have a .env file set up with a key for the Indeed API and keys for MongoLab, which are covered in the above tutorials.
+
 ### Authors
 * Malila Clearwater - [malilasage](https://github.com/malilasage)
 
