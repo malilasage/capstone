@@ -26,7 +26,7 @@ npm start
 ```
 
 ### Deployment
-Follow [this]() tutorial from scotch.io and [this] one from Heroku to deploy. Heroku does not support Mongo, but provides an add-on with MongoLab for deployment of MEAN apps.
+Follow [this](https://scotch.io/tutorials/use-mongodb-with-a-node-application-on-heroku) tutorial from scotch.io and [this](https://devcenter.heroku.com/articles/mongolab) one from Heroku to deploy. Heroku does not support Mongo, but provides an add-on with MongoLab for deployment of MEAN apps.
 
 You will also need to have a .env file set up with a key for the Indeed API and keys for MongoLab, which are covered in the above tutorials.
 
